@@ -1,5 +1,6 @@
 package com.example.revolutionary_hangman;
 
+import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
@@ -49,6 +50,13 @@ public class Man {
         roof.setY(pole.getY());
         drawing.add(roof);
 
+        // Create stability pole
+        Line stabilityPole = new Line();
+        stabilityPole.setStartX(pole.getX());
+        stabilityPole.setStartY(pole.getY() + pole.getHeight() * 0.2);
+        stabilityPole.setEndX(roof.getX() + roof.getWidth() * 0.2);
+        stabilityPole.setEndY(roof.getY());
+        drawing.add(stabilityPole);
 
     }
 
