@@ -67,12 +67,19 @@ public class Man {
         noose.setHeight(height * 0.3);
         drawing.add(noose);
 
-        //Create head
+        // Create head
         Circle head = new Circle();
         head.setRadius(width * 0.3);
         head.setCenterX(noose.getX());
         head.setCenterY(noose.getY() + head.getRadius());
         drawing.add(head);
+
+        // Create body
+        Rectangle body = new Rectangle();
+        body.setX(head.getCenterX());
+        body.setY(head.getCenterY() + head.getRadius());
+        body.setHeight(height * 0.5);
+        body.setWidth(width * 0.1);
 
     }
 
