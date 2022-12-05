@@ -1,5 +1,6 @@
 package com.example.revolutionary_hangman;
 
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
@@ -33,6 +34,7 @@ public class Man {
         base.setWidth(width * 0.6);
         base.setX( xPosition + width * 0.2);
         base.setY(yPosition + height * 0.9);
+        base.setFill(Color.BLACK);
         drawing.add(base);
 
         // Create the pole
@@ -41,6 +43,7 @@ public class Man {
         pole.setWidth(width * 0.1);
         pole.setX(base.getX() + base.getWidth() * 0.5);
         pole.setY(base.getY() + pole.getHeight());
+        pole.setFill(Color.BLACK);
         drawing.add(pole);
 
         // Create the roof
@@ -49,6 +52,7 @@ public class Man {
         roof.setHeight(height * 0.1);
         roof.setX(pole.getX());
         roof.setY(pole.getY());
+        roof.setFill(Color.BLACK);
         drawing.add(roof);
 
         // Create stability pole
@@ -57,6 +61,7 @@ public class Man {
         stabilityPole.setStartY(pole.getY() + pole.getHeight() * 0.2);
         stabilityPole.setEndX(roof.getX() + roof.getWidth() * 0.2);
         stabilityPole.setEndY(roof.getY());
+        stabilityPole.setFill(Color.BLACK);
         drawing.add(stabilityPole);
 
         // Create noose
@@ -65,6 +70,7 @@ public class Man {
         noose.setY(roof.getY());
         noose.setWidth(width * 0.1);
         noose.setHeight(height * 0.3);
+        noose.setFill(Color.BLACK);
         drawing.add(noose);
 
         // Create head
@@ -72,6 +78,7 @@ public class Man {
         head.setRadius(width * 0.3);
         head.setCenterX(noose.getX());
         head.setCenterY(noose.getY() + head.getRadius());
+        head.setFill(Color.BLACK);
         drawing.add(head);
 
         // Create body
@@ -80,6 +87,8 @@ public class Man {
         body.setY(head.getCenterY() + head.getRadius());
         body.setHeight(height * 0.5);
         body.setWidth(width * 0.1);
+        body.setFill(Color.BLACK);
+        drawing.add(body);
 
         // Create left arm
         Line leftArm = new Line();
@@ -87,6 +96,7 @@ public class Man {
         leftArm.setStartY(body.getY() + body.getHeight()*0.2);
         leftArm.setEndX(body.getX() - body.getHeight() * 0.3);
         leftArm.setEndY(body.getY() + body.getHeight() * 0.3);
+        leftArm.setFill(Color.BLACK);
         drawing.add(leftArm);
 
         // Create right arm
@@ -95,6 +105,7 @@ public class Man {
         rightArm.setStartY(body.getY() + body.getHeight()*0.2);
         rightArm.setEndX(body.getX() + body.getHeight() * 0.3);
         rightArm.setEndY(body.getY() + body.getHeight() * 0.3);
+        rightArm.setFill(Color.BLACK);
         drawing.add(rightArm);
 
         // Create left leg
@@ -103,7 +114,8 @@ public class Man {
         leftLeg.setStartY(body.getY() + body.getHeight());
         leftLeg.setEndX(leftLeg.getStartX() - body.getHeight() * 0.3);
         leftLeg.setEndY(leftLeg.getStartY() + body.getHeight() * 0.3);
-        drawing.add(leftArm);
+        leftLeg.setFill(Color.BLACK);
+        drawing.add(leftLeg);
 
         // Create right leg
         Line rightLeg = new Line();
@@ -111,7 +123,8 @@ public class Man {
         rightLeg.setStartY(body.getY() + body.getHeight());
         rightLeg.setEndX(rightLeg.getStartX() + body.getHeight() * 0.3);
         rightLeg.setEndY(rightLeg.getStartY() + body.getHeight() * 0.3);
-        drawing.add(leftArm);
+        rightLeg.setFill(Color.BLACK);
+        drawing.add(rightLeg);
     }
 
 }
