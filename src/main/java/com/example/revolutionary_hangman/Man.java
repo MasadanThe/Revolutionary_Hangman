@@ -58,6 +58,16 @@ public class Man {
         stabilityPole.setEndY(roof.getY());
         drawing.add(stabilityPole);
 
+        // Create noose
+        Rectangle noose = new Rectangle();
+        noose.setX(roof.getX() + roof.getWidth());
+        noose.setY(roof.getY());
+        noose.setWidth(width * 0.1);
+        noose.setHeight(height * 0.3);
+        drawing.add(noose);
+
+
+
     }
 
 }
