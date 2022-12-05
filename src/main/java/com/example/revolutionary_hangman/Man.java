@@ -33,13 +33,22 @@ public class Man {
         base.setY(yPosition + height * 0.9);
         drawing.add(base);
 
-        //Create the pole
+        // Create the pole
         Rectangle pole = new Rectangle();
         pole.setHeight(height * 0.7);
         pole.setWidth(width * 0.1);
         pole.setX(base.getX() + base.getWidth() * 0.5);
         pole.setY(base.getY() + pole.getHeight());
         drawing.add(pole);
+
+        // Create the roof
+        Rectangle roof = new Rectangle();
+        roof.setWidth(base.getWidth() * 0.5);
+        roof.setHeight(height * 0.1);
+        roof.setX(pole.getX());
+        roof.setY(pole.getY());
+        drawing.add(roof);
+
 
     }
 
