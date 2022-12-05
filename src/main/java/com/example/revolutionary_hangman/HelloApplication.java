@@ -13,12 +13,19 @@ import java.io.IOException;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        // Test man
         Man testMan = new Man(0,0, 400, 800);
         testMan.createDrawing();
+
+        // Test Group
         Group testGroup = new Group();
         testGroup.getChildren().addAll(testMan.getDrawing());
+
+        // Scene settings
         Scene scene = new Scene(testGroup, 1500, 800);
         scene.setFill(Color.WHITE);
+
+        // Stage
         stage.setTitle("Hello!");
         stage.setScene(scene);
         stage.show();
