@@ -27,6 +27,10 @@ public class Man {
         drawing = new ArrayList<>();
     }
 
+    public List<Shape> getDrawing() {
+        return drawing;
+    }
+
     public void createDrawing(){
         // Create a base
         Rectangle base = new Rectangle();
