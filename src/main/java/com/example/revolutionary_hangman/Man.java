@@ -88,6 +88,14 @@ public class Man {
         leftArm.setEndX(body.getX() - body.getHeight() * 0.3);
         leftArm.setEndY(body.getY() + body.getHeight() * 0.3);
         drawing.add(leftArm);
+
+        // Create right arm
+        Line rightArm = new Line();
+        rightArm.setStartX(body.getX());
+        rightArm.setStartY(body.getY() + body.getHeight()*0.2);
+        rightArm.setEndX(body.getX() + body.getHeight() * 0.3);
+        rightArm.setEndY(body.getY() + body.getHeight() * 0.3);
+        drawing.add(rightArm);
     }
 
 }
