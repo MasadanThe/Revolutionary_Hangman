@@ -1,5 +1,6 @@
 package com.example.revolutionary_hangman;
 
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
@@ -66,7 +67,12 @@ public class Man {
         noose.setHeight(height * 0.3);
         drawing.add(noose);
 
-
+        //Create head
+        Circle head = new Circle();
+        head.setRadius(width * 0.3);
+        head.setCenterX(noose.getX());
+        head.setCenterY(noose.getY() + head.getRadius());
+        drawing.add(head);
 
     }
 
