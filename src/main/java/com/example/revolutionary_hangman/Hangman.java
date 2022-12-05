@@ -1,16 +1,14 @@
 package com.example.revolutionary_hangman;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Shape;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class Hangman extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         // Test man
