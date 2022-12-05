@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a149e8d0-89f4-40f0-bd67-15401872c27c" name="Changes" comment="Start">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/HelloApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Man.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Man.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +52,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670236762328</updated>
-      <workItem from="1670236763554" duration="5558000" />
+      <workItem from="1670236763554" duration="7905000" />
     </task>
     <task id="LOCAL−00001" summary="Start">
       <created>1670237078049</created>
