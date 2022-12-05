@@ -1,5 +1,6 @@
 package com.example.revolutionary_hangman;
 
+import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
 
 import java.util.ArrayList;
@@ -22,4 +23,18 @@ public class Man {
 
         drawing = new ArrayList<>();
     }
+
+    public void createDrawing(){
+        // Create a base
+        Rectangle base = new Rectangle();
+        base.setHeight(height * 0.1);
+        base.setWidth(width * 0.6);
+        base.setX( xPosition + width * 0.2);
+        base.setY(yPosition + height * 0.9);
+        drawing.add(base);
+
+
+
+    }
+
 }
