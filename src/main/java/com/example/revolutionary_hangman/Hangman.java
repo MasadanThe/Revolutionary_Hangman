@@ -20,12 +20,12 @@ public class Hangman extends Application {
         testGroup.getChildren().addAll(testMan.getDrawing());
 
         // Scene settings
-        Scene scene = new Scene(testGroup, 1500, 800);
-        scene.setFill(Color.WHITE);
+        Scene playerScene = new Scene(testGroup, 1500, 800);
+        playerScene.setFill(Color.WHITE);
 
         // Stage
         stage.setTitle("Hello!");
-        stage.setScene(scene);
+        stage.setScene(playerScene);
         stage.show();
     }
 
