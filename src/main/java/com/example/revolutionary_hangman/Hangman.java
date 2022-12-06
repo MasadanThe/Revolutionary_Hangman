@@ -38,7 +38,7 @@ public class Hangman extends Application {
     }
 
     public Scene sceneSetKeyPress(Scene scene) {
-        //Records the key press
+        //Records the key press and stores it in pressedKey
         scene.addEventHandler(KeyEvent.KEY_PRESSED, (key) -> {
             pressedKey = key.getText();
         });
