@@ -3,12 +3,15 @@ package com.example.revolutionary_hangman;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class Hangman extends Application {
+    String pressedKey;
     @Override
     public void start(Stage stage) throws IOException {
         // Test man
@@ -22,6 +25,7 @@ public class Hangman extends Application {
         // Scene settings
         Scene playerScene = new Scene(testGroup, 1500, 800);
         playerScene.setFill(Color.WHITE);
+        playerScene = sceneSetKeyPress(playerScene);
 
         // Stage
         stage.setTitle("Hello!");
@@ -31,5 +35,14 @@ public class Hangman extends Application {
 
     public static void main(String[] args) {
         launch();
+    }
+
+    public Scene sceneSetKeyPress(Scene scene) {
+        //Records the key press
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, (key) -> {
+            pressedKey = key.getCharacter();
+        });
+
+        return scene;
     }
 }
