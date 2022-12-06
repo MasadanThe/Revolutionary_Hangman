@@ -1,3 +1,5 @@
+package com.example.revolutionary_hangman;
+
 public class Player {
 
     public static class Man {
@@ -18,5 +20,8 @@ public class Player {
             this.width = width;
             this.height = height;
         }
+    public void createDrawing(){
+
+    }
     }
 }
