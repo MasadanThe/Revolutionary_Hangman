@@ -40,7 +40,7 @@ public class Hangman extends Application {
     public Scene sceneSetKeyPress(Scene scene) {
         //Records the key press
         scene.addEventHandler(KeyEvent.KEY_PRESSED, (key) -> {
-            pressedKey = key.getCharacter();
+            pressedKey = key.getText();
         });
 
         return scene;
