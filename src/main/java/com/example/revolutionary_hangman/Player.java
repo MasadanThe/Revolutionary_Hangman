@@ -12,6 +12,38 @@ public class Player {
     public int width;
     public int height;
 
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setWord(String word) {
+            this.word = word;
+        }
+
+        public String getWord() {
+            return word;
+        }
+
+        public int getxPosition() {
+            return xPosition;
+        }
+
+        public int getyPosition() {
+            return yPosition;
+        }
+
+        public int getWidth() {
+            return width;
+        }
+
+        public int getHeight() {
+            return height;
+        }
+
         public Man(String name, String word, int xPosition, int yPosition, int width, int height) {
             this.name = name;
             this.word = word;
@@ -19,9 +51,11 @@ public class Player {
             this.yPosition = yPosition;
             this.width = width;
             this.height = height;
+
         }
-    public void createDrawing(){
 
     }
+    public int createDrawing(int xPosition, int yPosition, int width, int height) {
+
     }
 }
