@@ -18,7 +18,7 @@ public class Man {
 
     private List<Shape> drawing;
 
-    public Man (int xPosition, int yPosition, int width, int height){
+    public Man(int xPosition, int yPosition, int width, int height) {
         this.xPosition = xPosition;
         this.yPosition = yPosition;
         this.width = width;
@@ -27,16 +27,20 @@ public class Man {
         drawing = new ArrayList<>();
     }
 
+    public Man() {
+
+    }
+
     public List<Shape> getDrawing() {
         return drawing;
     }
 
-    public void createDrawing(){
+    public void createDrawing() {
         // Create a base
         Rectangle base = new Rectangle();
         base.setHeight(height * 0.05);
         base.setWidth(width * 0.6);
-        base.setX( xPosition + width * 0.2);
+        base.setX(xPosition + width * 0.2);
         base.setY(yPosition + height * 0.9);
         base.setFill(Color.BLACK);
         drawing.add(base);
@@ -130,5 +134,4 @@ public class Man {
         rightLeg.setFill(Color.BLACK);
         drawing.add(rightLeg);
     }
-
 }
