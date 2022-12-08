@@ -96,6 +96,10 @@ public class Hangman extends Application {
     }
 
     public ArrayList<Player> createPlayers(){
+        ArrayList<Player> playersList = new ArrayList<>();
+        for(int i = 0; i < players; i++)
+        {
 
+        }
     }
 }
