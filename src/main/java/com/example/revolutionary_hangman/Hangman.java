@@ -82,4 +82,9 @@ public class Hangman extends Application {
         return order;
 
     }
+
+    public char randomizeForbiddenVowel(){
+        Random random = new Random();
+        char[] forbiddenVowels = {'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö'};
+    }
 }
