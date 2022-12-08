@@ -102,6 +102,8 @@ public class Hangman extends Application {
         ArrayList<Player> playersList = new ArrayList<>();
         int newXPosition = 0;
         int playerWidth = width / players;
+
+        // Creates the number of players and add their new x position
         for(int i = 0; i < players; i++)
         {
             Player player = new Player(newXPosition, 0, playerWidth, height);
