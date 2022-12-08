@@ -19,6 +19,9 @@ public class Hangman extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
+        final int WIDTH = 1500;
+        final int HEIGHT = 800;
+
         ArrayList<Player> players = new ArrayList<>();
 
         // Test man
@@ -30,7 +33,7 @@ public class Hangman extends Application {
         testGroup.getChildren().addAll(testMan.getDrawing());
 
         // Scene settings
-        Scene playerScene = new Scene(testGroup, 1500, 800);
+        Scene playerScene = new Scene(testGroup, WIDTH, HEIGHT);
         playerScene.setFill(Color.WHITE);
         playerScene = sceneSetKeyPress(playerScene);
 
@@ -97,6 +100,8 @@ public class Hangman extends Application {
 
     public ArrayList<Player> createPlayers(){
         ArrayList<Player> playersList = new ArrayList<>();
+        int newXPosition = 0;
+        int width =
         for(int i = 0; i < players; i++)
         {
 
