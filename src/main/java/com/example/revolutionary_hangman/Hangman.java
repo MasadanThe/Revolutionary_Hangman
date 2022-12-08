@@ -98,10 +98,10 @@ public class Hangman extends Application {
         forbiddenVowel = forbiddenVowels[forbiddenVowelIndex];
     }
 
-    public ArrayList<Player> createPlayers(){
+    public ArrayList<Player> createPlayers(int width, int height){
         ArrayList<Player> playersList = new ArrayList<>();
         int newXPosition = 0;
-        int width =
+        int playerWidth = width / players;
         for(int i = 0; i < players; i++)
         {
 
