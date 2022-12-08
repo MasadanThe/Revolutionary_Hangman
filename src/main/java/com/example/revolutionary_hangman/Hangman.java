@@ -51,12 +51,14 @@ public class Hangman extends Application {
 
     public ArrayList<Integer> randomiseWhoToGuess(){
         Random random = new Random();
+        // Store the order
         ArrayList<Integer> order = new ArrayList<>();
         Boolean isDone = false;
         while (!isDone)
         {
             int randomNumber = random.nextInt(1, players);
             boolean foundNumber = false;
+            // Checks if the random number already exist
             for (int i = 0; i < order.size(); i++)
             {
                 if (order.get(i) == randomNumber)
@@ -64,11 +66,14 @@ public class Hangman extends Application {
                     foundNumber = true;
                 }
             }
+
+            // If the number doesn't exist, add it to the order list
             if (!foundNumber)
             {
                 order.add(randomNumber);
             }
-            if(order.size() == 4){
+            // If the list is full
+            if(order.size() == players){
                 isDone = true;
             }
         }
