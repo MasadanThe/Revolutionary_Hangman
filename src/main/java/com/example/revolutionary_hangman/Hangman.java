@@ -18,6 +18,9 @@ public class Hangman extends Application {
     private char forbiddenVowel;
     @Override
     public void start(Stage stage) throws IOException {
+
+        ArrayList<Player> players = new ArrayList<>();
+
         // Test man
         Man testMan = new Man(0,0, 400, 800);
         testMan.createDrawing();
