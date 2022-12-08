@@ -105,7 +105,10 @@ public class Hangman extends Application {
         for(int i = 0; i < players; i++)
         {
             Player player = new Player(newXPosition, 0, playerWidth, height);
-            playersList.add()
+            playersList.add(player);
+            newXPosition += playerWidth;
         }
+
+        return playersList;
     }
 }
