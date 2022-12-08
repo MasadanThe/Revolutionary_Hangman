@@ -14,10 +14,18 @@ import java.util.Random;
 
 public class Hangman extends Application {
     private String pressedKey;
-    private int players;
+
     private char forbiddenVowel;
     @Override
     public void start(Stage stage) throws IOException {
+
+        final int WIDTH = 1500;
+        final int HEIGHT = 800;
+
+        int players;
+
+        ArrayList<Player> playersList = new ArrayList<>();
+
         // Test man
         Man testMan = new Man(0,0, 400, 800);
         testMan.createDrawing();
@@ -27,7 +35,7 @@ public class Hangman extends Application {
         testGroup.getChildren().addAll(testMan.getDrawing());
 
         // Scene settings
-        Scene playerScene = new Scene(testGroup, 1500, 800);
+        Scene playerScene = new Scene(testGroup, WIDTH, HEIGHT);
         playerScene.setFill(Color.WHITE);
         playerScene = sceneSetKeyPress(playerScene);
 
@@ -50,7 +58,7 @@ public class Hangman extends Application {
         return scene;
     }
 
-    public ArrayList<Integer> randomiseWhoToGuess(){
+    public ArrayList<Integer> randomiseWhoToGuess(int players){
         Random random = new Random();
         // Store the order
         ArrayList<Integer> order = new ArrayList<>();
@@ -90,5 +98,21 @@ public class Hangman extends Application {
         int forbiddenVowelIndex = random.nextInt(forbiddenVowels.length - 1);
 
         forbiddenVowel = forbiddenVowels[forbiddenVowelIndex];
+    }
+
+    public ArrayList<Player> createPlayers(int width, int height, int players){
+        ArrayList<Player> playersList = new ArrayList<>();
+        int newXPosition = 0;
+        int playerWidth = width / players;
+
+        // Creates the number of players and add their new x position
+        for(int i = 0; i < players; i++)
+        {
+            Player player = new Player(newXPosition, 0, playerWidth, height);
+            playersList.add(player);
+            newXPosition += playerWidth;
+        }
+
+        return playersList;
     }
 }
