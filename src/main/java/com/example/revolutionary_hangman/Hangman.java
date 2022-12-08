@@ -94,4 +94,8 @@ public class Hangman extends Application {
 
         forbiddenVowel = forbiddenVowels[forbiddenVowelIndex];
     }
+
+    public ArrayList<Player> createPlayers(){
+
+    }
 }
