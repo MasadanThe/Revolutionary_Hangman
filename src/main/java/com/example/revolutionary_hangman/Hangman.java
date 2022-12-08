@@ -104,7 +104,8 @@ public class Hangman extends Application {
         int playerWidth = width / players;
         for(int i = 0; i < players; i++)
         {
-
+            Player player = new Player(newXPosition, 0, playerWidth, height);
+            playersList.add()
         }
     }
 }

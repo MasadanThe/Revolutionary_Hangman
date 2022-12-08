@@ -12,6 +12,13 @@ public class Player {
         public int width;
         public int height;
 
+        public Player(int xPosition, int yPosition, int width, int height){
+            this.xPosition = xPosition;
+            this.yPosition = yPosition;
+            this.width = width;
+            this.height = height;
+        }
+
         public String getName() {
             return name;
         }
