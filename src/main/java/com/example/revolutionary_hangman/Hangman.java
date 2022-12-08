@@ -11,7 +11,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Hangman extends Application {
-    String pressedKey;
+    private String pressedKey;
+    private int players;
     @Override
     public void start(Stage stage) throws IOException {
         // Test man
