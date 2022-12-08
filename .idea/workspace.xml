@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a149e8d0-89f4-40f0-bd67-15401872c27c" name="Changes" comment="Start">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Hangman.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Man.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Man.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/revolutionary_hangman/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/revolutionary_hangman/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +50,7 @@
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
   <component name="RunManager">
@@ -85,7 +84,8 @@
       <workItem from="1670236763554" duration="8338000" />
       <workItem from="1670275589490" duration="31716000" />
       <workItem from="1670452255543" duration="10191000" />
-      <workItem from="1670509855683" duration="2401000" />
+      <workItem from="1670509855683" duration="4488000" />
+      <workItem from="1670529518205" duration="1005000" />
     </task>
     <task id="LOCAL−00001" summary="Start">
       <created>1670237078049</created>

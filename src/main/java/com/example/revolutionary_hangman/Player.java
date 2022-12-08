@@ -5,6 +5,7 @@ public class Player {
   //instance of man begins whit private
   private Man man= new Man();
 
+        private String name;
         public int points;
         private String word;
         public int xPosition;
@@ -20,15 +21,10 @@ public class Player {
             this.height = height;
         }
 
-        public void getName() {
-            return ;
+
+        public String getName() {
+           return name;
         }
-
-
-
-
-
-
          public int getPoints() {
            return points;
         }
