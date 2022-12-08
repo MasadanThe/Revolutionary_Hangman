@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class Hangman extends Application {
     private String pressedKey;
-    private int players;
+
     private char forbiddenVowel;
     @Override
     public void start(Stage stage) throws IOException {
@@ -22,7 +22,9 @@ public class Hangman extends Application {
         final int WIDTH = 1500;
         final int HEIGHT = 800;
 
-        ArrayList<Player> players = new ArrayList<>();
+        int players;
+
+        ArrayList<Player> playersList = new ArrayList<>();
 
         // Test man
         Man testMan = new Man(0,0, 400, 800);
@@ -56,7 +58,7 @@ public class Hangman extends Application {
         return scene;
     }
 
-    public ArrayList<Integer> randomiseWhoToGuess(){
+    public ArrayList<Integer> randomiseWhoToGuess(int players){
         Random random = new Random();
         // Store the order
         ArrayList<Integer> order = new ArrayList<>();
@@ -98,7 +100,7 @@ public class Hangman extends Application {
         forbiddenVowel = forbiddenVowels[forbiddenVowelIndex];
     }
 
-    public ArrayList<Player> createPlayers(int width, int height){
+    public ArrayList<Player> createPlayers(int width, int height, int players){
         ArrayList<Player> playersList = new ArrayList<>();
         int newXPosition = 0;
         int playerWidth = width / players;
