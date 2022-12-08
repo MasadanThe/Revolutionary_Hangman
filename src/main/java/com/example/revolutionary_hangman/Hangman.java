@@ -15,6 +15,7 @@ import java.util.Random;
 public class Hangman extends Application {
     private String pressedKey;
     private int players;
+    private char forbiddenVowel;
     @Override
     public void start(Stage stage) throws IOException {
         // Test man
@@ -80,5 +81,14 @@ public class Hangman extends Application {
 
         return order;
 
+    }
+
+    public void randomizeForbiddenVowel(){
+        Random random = new Random();
+        char[] forbiddenVowels = {'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö'};
+        // Randomize which index of the character that will be forbidden.
+        int forbiddenVowelIndex = random.nextInt(forbiddenVowels.length - 1);
+
+        forbiddenVowel = forbiddenVowels[forbiddenVowelIndex];
     }
 }
