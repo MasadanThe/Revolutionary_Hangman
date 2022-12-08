@@ -15,6 +15,7 @@ import java.util.Random;
 public class Hangman extends Application {
     private String pressedKey;
     private int players;
+    private char forbiddenVowel;
     @Override
     public void start(Stage stage) throws IOException {
         // Test man
