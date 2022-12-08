@@ -9,9 +9,12 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Random;
 
 public class Hangman extends Application {
-    String pressedKey;
+    private String pressedKey;
+    private int players;
     @Override
     public void start(Stage stage) throws IOException {
         // Test man
@@ -44,5 +47,38 @@ public class Hangman extends Application {
         });
 
         return scene;
+    }
+
+    public ArrayList<Integer> randomiseWhoToGuess(){
+        Random random = new Random();
+        // Store the order
+        ArrayList<Integer> order = new ArrayList<>();
+        Boolean isDone = false;
+        while (!isDone)
+        {
+            int randomNumber = random.nextInt(1, players);
+            boolean foundNumber = false;
+            // Checks if the random number already exist
+            for (int i = 0; i < order.size(); i++)
+            {
+                if (order.get(i) == randomNumber)
+                {
+                    foundNumber = true;
+                }
+            }
+
+            // If the number doesn't exist, add it to the order list
+            if (!foundNumber)
+            {
+                order.add(randomNumber);
+            }
+            // If the list is full
+            if(order.size() == players){
+                isDone = true;
+            }
+        }
+
+        return order;
+
     }
 }
