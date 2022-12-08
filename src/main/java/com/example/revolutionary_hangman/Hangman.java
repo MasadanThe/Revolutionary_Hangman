@@ -68,6 +68,9 @@ public class Hangman extends Application {
             {
                 order.add(randomNumber);
             }
+            if(order.size() == 4){
+                isDone = true;
+            }
         }
 
         return order;
