@@ -2,15 +2,17 @@ package com.example.revolutionary_hangman;
 
 public class Player {
 
-
+  //instance of man begins whit private
   private Man man= new Man();
 
         private String name;
+        public int points;
         private String word;
         public int xPosition;
         public int yPosition;
         public int width;
         public int height;
+
 
         public Player(int xPosition, int yPosition, int width, int height){
             this.xPosition = xPosition;
@@ -19,14 +21,16 @@ public class Player {
             this.height = height;
         }
 
+
         public String getName() {
-            return name;
+           return name;
         }
-
-        public void setName(String name) {
-            this.name = name;
+         public int getPoints() {
+           return points;
         }
-
+        public void setPoints(int points) {
+            this.points = points;
+        }
         public void setWord(String word) {
             this.word = word;
         }
@@ -50,7 +54,6 @@ public class Player {
         public int getHeight() {
             return height;
         }
-
 
 
 
