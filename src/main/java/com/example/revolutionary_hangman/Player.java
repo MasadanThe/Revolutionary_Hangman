@@ -18,13 +18,15 @@ public class Player {
 
 
         ArrayList<Character> wordAsArrayList = new ArrayList<>();
+
+
+
         public Player(int xPosition, int yPosition, int width, int height){
             this.xPosition = xPosition;
             this.yPosition = yPosition;
             this.width = width;
             this.height = height;
         }
-
 
         public String getName() {
            return name;
@@ -55,11 +57,17 @@ public class Player {
             return width;
         }
 
-        public int getHeight() {
+       public int getHeight() {
             return height;
         }
 
 
+        public void checkForCharacter() {
+         // ArrayList<Character> wordAsArrayList = new ArrayList<>();
+        }
+        public void wrongWord(){
+
+        }
 
     public void createDrawing(int xPosition, int yPosition, int width, int height) {
 
