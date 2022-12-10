@@ -1,9 +1,13 @@
 package com.example.revolutionary_hangman;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
 
   //instance of man begins whit private
   private Man man= new Man();
+
 
         private String name;
         public int points;
@@ -22,7 +26,10 @@ public class Player {
         }
 
 
-        public String getName() {
+
+
+
+    public String getName() {
            return name;
         }
          public int getPoints() {
