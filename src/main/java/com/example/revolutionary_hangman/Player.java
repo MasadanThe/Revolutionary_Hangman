@@ -1,7 +1,6 @@
 package com.example.revolutionary_hangman;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Player {
 
@@ -18,6 +17,7 @@ public class Player {
         public int height;
 
 
+        ArrayList<Character> wordAsArrayList = new ArrayList<>();
         public Player(int xPosition, int yPosition, int width, int height){
             this.xPosition = xPosition;
             this.yPosition = yPosition;
@@ -26,10 +26,7 @@ public class Player {
         }
 
 
-
-
-
-    public String getName() {
+        public String getName() {
            return name;
         }
          public int getPoints() {
