@@ -25,24 +25,22 @@ public class Hangman extends Application {
     static int amountPlayers;
     static int gameMode;
     static int disabledRounds;
-    private ArrayList<Player> playersList = new ArrayList<>();
     private final int WIDTH = 1280;
     private final int HEIGHT = 720;
+
+    private // 0 = settingsScene, 1 = chooseWordScene, 2 = playScene
+    int state = 0;
+
+    private boolean start = false;
+
+    private ArrayList<Player> playersList = new ArrayList<>();
+    private Group playersDrawing = new Group();
+
 
 
     private char forbiddenVowel;
     @Override
     public void start(Stage stage) throws IOException {
-
-
-
-
-        // 0 = settingsScene, 1 = chooseWordScene, 2 = playScene
-        int state = 0;
-
-
-
-
 
 
         // Test man
@@ -70,13 +68,24 @@ public class Hangman extends Application {
         playScene.setFill(Color.WHITE);
         playScene = sceneSetKeyPress(playScene);
 
+        run(stage, playScene);
+
+        // Stage
+        stage.setTitle("Hangman!");
+        stage.setScene(settingScene);
+        stage.show();
+    }
+
+    public void run(Stage stage, Scene playScene){
         // Timeline is the runs every 0.2 seconds
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), ev -> {
 
             // settingsScene
-            if (state == 0)
+            if (state == 0 && start == true)
             {
-
+                playersList = createPlayers(WIDTH, HEIGHT, amountPlayers);
+                start = false;
+                stage.setScene(playScene);
             }
             // chooseWordScene
             else if (state == 1)
@@ -91,11 +100,6 @@ public class Hangman extends Application {
         // Runs the timeline forever
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
-
-        // Stage
-        stage.setTitle("Hangman!");
-        stage.setScene(settingScene);
-        stage.show();
     }
 
     public static void main(String[] args) {
@@ -227,7 +231,7 @@ public class Hangman extends Application {
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
+                start = true;
             }
         });
         settingsGroup.getChildren().add(startButton);

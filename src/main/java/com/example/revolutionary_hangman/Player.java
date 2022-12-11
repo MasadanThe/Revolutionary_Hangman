@@ -54,7 +54,12 @@ public class Player {
 
 
 
-    public void createDrawing(int xPosition, int yPosition, int width, int height) {
+    public void createDrawing() {
+            man.setWidth(width);
+            man.setHeight(height);
+            man.setxPosition(xPosition);
+            man.setyPosition(yPosition);
+            man.createDrawing();
 
     }
 }
