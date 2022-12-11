@@ -4,6 +4,8 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -23,6 +25,9 @@ public class Hangman extends Application {
     static int amountPlayers;
     static int gameMode;
     static int disabledRounds;
+    private ArrayList<Player> playersList = new ArrayList<>();
+    private final int WIDTH = 1280;
+    private final int HEIGHT = 720;
 
 
     private char forbiddenVowel;
@@ -30,14 +35,13 @@ public class Hangman extends Application {
     public void start(Stage stage) throws IOException {
 
 
-        final int WIDTH = 1280;
-        final int HEIGHT = 720;
+
 
         // 0 = settingsScene, 1 = chooseWordScene, 2 = playScene
         int state = 0;
 
 
-        ArrayList<Player> playersList = new ArrayList<>();
+
 
 
 
@@ -90,7 +94,7 @@ public class Hangman extends Application {
 
         // Stage
         stage.setTitle("Hangman!");
-        stage.setScene(playScene);
+        stage.setScene(settingScene);
         stage.show();
     }
 
@@ -216,6 +220,17 @@ public class Hangman extends Application {
         settingsGroup.getChildren().add(buttonAmountPlayers2);
         settingsGroup.getChildren().add(buttonAmountPlayers3);
         settingsGroup.getChildren().add(buttonAmountPlayers4);
+
+        Button startButton = new Button("Start");
+        startButton.setLayoutX(550);
+        startButton.setLayoutY(200);
+        startButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+            }
+        });
+        settingsGroup.getChildren().add(startButton);
 
         return settingsGroup;
     }
