@@ -62,9 +62,9 @@ public class Hangman extends Application {
         //Scene for creating word
         Scene chooseWordScene = new Scene(chooseWordGroup, WIDTH, HEIGHT);
 
-        Scene playerScene = new Scene(testGroup, WIDTH, HEIGHT);
-        playerScene.setFill(Color.WHITE);
-        playerScene = sceneSetKeyPress(playerScene);
+        Scene playScene = new Scene(testGroup, WIDTH, HEIGHT);
+        playScene.setFill(Color.WHITE);
+        playScene = sceneSetKeyPress(playScene);
 
         // Timeline is the runs every 0.2 seconds
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), ev -> {
@@ -74,11 +74,13 @@ public class Hangman extends Application {
             {
                 stage.setScene(settingScene);
             }
-            //
+            // chooseWordScene
             else if (state == 1)
             {
 
-            } else if (state == 2) {
+            }
+            // playScene
+            else if (state == 2) {
 
             }
 
@@ -89,7 +91,7 @@ public class Hangman extends Application {
 
         // Stage
         stage.setTitle("Hello!");
-        stage.setScene(playerScene);
+        stage.setScene(playScene);
         stage.show();
     }
 
