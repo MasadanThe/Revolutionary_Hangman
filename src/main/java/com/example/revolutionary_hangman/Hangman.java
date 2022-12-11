@@ -50,7 +50,9 @@ public class Hangman extends Application {
         testGroup.getChildren().addAll(testMan.getDrawing());
 
 
-        // Scene settings
+        // settingsScene
+        Group settingsGroup= new Group();
+
         Button buttonAmountPlayers2 = new Button("Amount Players  2");
         Button buttonAmountPlayers3 = new Button("Amount Players  3");
         Button buttonAmountPlayers4 = new Button("Amount Players  4");
@@ -89,15 +91,18 @@ public class Hangman extends Application {
         buttonSetDisabledRounds1.setOnAction(e -> disabledRounds = 0);
         buttonSetDisabledRounds2.setOnAction(e -> disabledRounds = 1);
         buttonSetDisabledRounds3.setOnAction(e -> disabledRounds = 2);
-        testGroup.getChildren().add(buttonKey0);
-        testGroup.getChildren().add(buttonKey1);
-        testGroup.getChildren().add(buttonKey2);
-        testGroup.getChildren().add(buttonSetDisabledRounds1);
-        testGroup.getChildren().add(buttonSetDisabledRounds2);
-        testGroup.getChildren().add(buttonSetDisabledRounds3);
-        testGroup.getChildren().add(buttonAmountPlayers2);
-        testGroup.getChildren().add(buttonAmountPlayers3);
-        testGroup.getChildren().add(buttonAmountPlayers4);
+        settingsGroup.getChildren().add(buttonKey0);
+        settingsGroup.getChildren().add(buttonKey1);
+        settingsGroup.getChildren().add(buttonKey2);
+        settingsGroup.getChildren().add(buttonSetDisabledRounds1);
+        settingsGroup.getChildren().add(buttonSetDisabledRounds2);
+        settingsGroup.getChildren().add(buttonSetDisabledRounds3);
+        settingsGroup.getChildren().add(buttonAmountPlayers2);
+        settingsGroup.getChildren().add(buttonAmountPlayers3);
+        settingsGroup.getChildren().add(buttonAmountPlayers4);
+
+        //Scene for settings
+        Scene settingScene = new Scene(settingsGroup, WIDTH, HEIGHT);
 
         Scene playerScene = new Scene(testGroup, WIDTH, HEIGHT);
         playerScene.setFill(Color.WHITE);
@@ -105,6 +110,11 @@ public class Hangman extends Application {
 
         // Timeline is the runs every 0.2 seconds
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), ev -> {
+
+            if (state == 0)
+            {
+
+            }
 
         }));
         // Runs the timeline forever
