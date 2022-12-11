@@ -72,16 +72,15 @@ public class Hangman extends Application {
             // settingsScene
             if (state == 0)
             {
-                stage.setScene(settingScene);
+
             }
             // chooseWordScene
             else if (state == 1)
             {
-
             }
             // playScene
-            else if (state == 2) {
-
+            else if (state == 2)
+            {
             }
 
         }));
@@ -90,7 +89,7 @@ public class Hangman extends Application {
         timeline.play();
 
         // Stage
-        stage.setTitle("Hello!");
+        stage.setTitle("Hangman!");
         stage.setScene(playScene);
         stage.show();
     }
