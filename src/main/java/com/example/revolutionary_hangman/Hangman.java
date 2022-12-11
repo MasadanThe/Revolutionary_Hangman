@@ -22,7 +22,10 @@ public class Hangman extends Application {
         final int WIDTH = 1500;
         final int HEIGHT = 800;
 
-        int players;
+        int players = 0;
+        int round = 0;
+        // 0 = Choose who to pick, 1 = random who to pick, 2 = mix of them both.
+        int settings = 0;
 
         ArrayList<Player> playersList = new ArrayList<>();
 
