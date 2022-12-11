@@ -28,7 +28,7 @@ public class Man {
     }
 
     public Man() {
-
+        drawing = new ArrayList<>();
     }
 
     public int getWidth() {

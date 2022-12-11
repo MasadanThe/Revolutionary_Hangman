@@ -31,7 +31,6 @@ public class Hangman extends Application {
     private // 0 = settingsScene, 1 = chooseWordScene, 2 = playScene
     int state = 0;
 
-    private boolean start = false;
 
     private ArrayList<Player> playersList = new ArrayList<>();
     private Group playersDrawing = new Group();
@@ -49,6 +48,9 @@ public class Hangman extends Application {
 
     //Scene for creating word
     private Scene chooseWordScene = new Scene(chooseWordGroup, WIDTH, HEIGHT);
+
+    // Scene for playing
+    private Scene playScene = new Scene(playersDrawing, WIDTH, HEIGHT);
 
 
 
@@ -71,11 +73,11 @@ public class Hangman extends Application {
 
         createSettingsGroup();
 
-        Scene playScene = new Scene(playersDrawing, WIDTH, HEIGHT);
+
         playScene.setFill(Color.WHITE);
         playScene = sceneSetKeyPress(playScene);
 
-        run(startStage, playScene);
+        run();
 
         // Stage
         stage.setTitle("Hangman!");
@@ -83,20 +85,13 @@ public class Hangman extends Application {
         stage.show();
     }
 
-    public void run(Stage stage, Scene playScene){
+    public void run(){
         // Timeline is the runs every 0.2 seconds
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), ev -> {
 
             // settingsScene
-            if (state == 0 && start == true)
+            if (state == 0)
             {
-                playersList = createPlayers(WIDTH, HEIGHT, amountPlayers);
-                for (Player player: playersList) {
-                    playersDrawing.getChildren().addAll(player.getDrawing());
-
-                }
-                start = false;
-                stage.setScene(playScene);
             }
             // chooseWordScene
             else if (state == 1)
@@ -178,6 +173,7 @@ public class Hangman extends Application {
         {
             Player player = new Player(newXPosition, 0, playerWidth, height);
             player.createDrawing();
+            playersDrawing.getChildren().addAll(player.getDrawing());
             playersList.add(player);
             newXPosition += playerWidth;
         }
@@ -198,9 +194,9 @@ public class Hangman extends Application {
         buttonAmountPlayers3.setLayoutY(90);
         buttonAmountPlayers4.setLayoutX(790);
         buttonAmountPlayers4.setLayoutY(90);
-        buttonAmountPlayers2.setOnAction(e -> amountPlayers = 2);
-        buttonAmountPlayers3.setOnAction(e -> amountPlayers = 3);
-        buttonAmountPlayers4.setOnAction(e -> amountPlayers = 4);
+        buttonAmountPlayers2.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT, 2));
+        buttonAmountPlayers3.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT, 3));
+        buttonAmountPlayers4.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT, 4));
 
         Button buttonKey0 = new Button("Selection Mode");
         Button buttonKey1 = new Button("Random Mode");
@@ -243,7 +239,8 @@ public class Hangman extends Application {
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                stage.setScene();
+
+                stage.setScene(playScene);
             }
         });
         settingsGroup.getChildren().add(startButton);
