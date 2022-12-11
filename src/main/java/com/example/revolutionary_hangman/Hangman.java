@@ -91,13 +91,13 @@ public class Hangman extends Application {
 
     }
 
-    public void randomizeForbiddenVowel(){
+    public char randomizeForbiddenVowel(){
         Random random = new Random();
         char[] forbiddenVowels = {'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö'};
         // Randomize which index of the character that will be forbidden.
         int forbiddenVowelIndex = random.nextInt(forbiddenVowels.length - 1);
 
-        forbiddenVowel = forbiddenVowels[forbiddenVowelIndex];
+        return forbiddenVowels[forbiddenVowelIndex];
     }
 
     public ArrayList<Player> createPlayers(int width, int height, int players){
