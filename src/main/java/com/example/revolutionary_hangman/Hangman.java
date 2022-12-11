@@ -50,56 +50,9 @@ public class Hangman extends Application {
         testGroup.getChildren().addAll(testMan.getDrawing());
 
 
-        // settingsScene
-        Group settingsGroup= new Group();
+        // Settings Group
+        Group settingsGroup = createSettingsGroup();
 
-        Button buttonAmountPlayers2 = new Button("Amount Players  2");
-        Button buttonAmountPlayers3 = new Button("Amount Players  3");
-        Button buttonAmountPlayers4 = new Button("Amount Players  4");
-        buttonAmountPlayers2.setLayoutX(550);
-        buttonAmountPlayers2.setLayoutY(90);
-        buttonAmountPlayers3.setLayoutX(670);
-        buttonAmountPlayers3.setLayoutY(90);
-        buttonAmountPlayers4.setLayoutX(790);
-        buttonAmountPlayers4.setLayoutY(90);
-        buttonAmountPlayers2.setOnAction(e -> amountPlayers = 2);
-        buttonAmountPlayers3.setOnAction(e -> amountPlayers = 3);
-        buttonAmountPlayers4.setOnAction(e -> amountPlayers = 4);
-
-        Button buttonKey0 = new Button("Selection Mode");
-        Button buttonKey1 = new Button("Random Mode");
-        Button buttonKey2 = new Button("Queue Mode");
-        buttonKey0.setLayoutX(550);
-        buttonKey0.setLayoutY(120);
-        buttonKey1.setLayoutX(650);
-        buttonKey1.setLayoutY(120);
-        buttonKey2.setLayoutX(750);
-        buttonKey2.setLayoutY(120);
-        buttonKey0.setOnAction(e -> gameMode = 0);
-        buttonKey1.setOnAction(e -> gameMode = 1);
-        buttonKey2.setOnAction(e -> gameMode = 2);
-
-        Button buttonSetDisabledRounds1 = new Button("Dis round 1");
-        Button buttonSetDisabledRounds2 = new Button("Dis round 2");
-        Button buttonSetDisabledRounds3 = new Button("Dis round 3");
-        buttonSetDisabledRounds1.setLayoutX(550);
-        buttonSetDisabledRounds1.setLayoutY(150);
-        buttonSetDisabledRounds2.setLayoutX(650);
-        buttonSetDisabledRounds2.setLayoutY(150);
-        buttonSetDisabledRounds3.setLayoutX(750);
-        buttonSetDisabledRounds3.setLayoutY(150);
-        buttonSetDisabledRounds1.setOnAction(e -> disabledRounds = 0);
-        buttonSetDisabledRounds2.setOnAction(e -> disabledRounds = 1);
-        buttonSetDisabledRounds3.setOnAction(e -> disabledRounds = 2);
-        settingsGroup.getChildren().add(buttonKey0);
-        settingsGroup.getChildren().add(buttonKey1);
-        settingsGroup.getChildren().add(buttonKey2);
-        settingsGroup.getChildren().add(buttonSetDisabledRounds1);
-        settingsGroup.getChildren().add(buttonSetDisabledRounds2);
-        settingsGroup.getChildren().add(buttonSetDisabledRounds3);
-        settingsGroup.getChildren().add(buttonAmountPlayers2);
-        settingsGroup.getChildren().add(buttonAmountPlayers3);
-        settingsGroup.getChildren().add(buttonAmountPlayers4);
 
         //Scene for settings
         Scene settingScene = new Scene(settingsGroup, WIDTH, HEIGHT);
@@ -113,7 +66,7 @@ public class Hangman extends Application {
 
             if (state == 0)
             {
-
+                stage.setScene(settingScene);
             }
 
         }));
@@ -196,5 +149,60 @@ public class Hangman extends Application {
         }
 
         return playersList;
+    }
+
+    public Group createSettingsGroup()
+    {
+        Group settingsGroup = new Group();
+
+        Button buttonAmountPlayers2 = new Button("Amount Players  2");
+        Button buttonAmountPlayers3 = new Button("Amount Players  3");
+        Button buttonAmountPlayers4 = new Button("Amount Players  4");
+        buttonAmountPlayers2.setLayoutX(550);
+        buttonAmountPlayers2.setLayoutY(90);
+        buttonAmountPlayers3.setLayoutX(670);
+        buttonAmountPlayers3.setLayoutY(90);
+        buttonAmountPlayers4.setLayoutX(790);
+        buttonAmountPlayers4.setLayoutY(90);
+        buttonAmountPlayers2.setOnAction(e -> amountPlayers = 2);
+        buttonAmountPlayers3.setOnAction(e -> amountPlayers = 3);
+        buttonAmountPlayers4.setOnAction(e -> amountPlayers = 4);
+
+        Button buttonKey0 = new Button("Selection Mode");
+        Button buttonKey1 = new Button("Random Mode");
+        Button buttonKey2 = new Button("Queue Mode");
+        buttonKey0.setLayoutX(550);
+        buttonKey0.setLayoutY(120);
+        buttonKey1.setLayoutX(650);
+        buttonKey1.setLayoutY(120);
+        buttonKey2.setLayoutX(750);
+        buttonKey2.setLayoutY(120);
+        buttonKey0.setOnAction(e -> gameMode = 0);
+        buttonKey1.setOnAction(e -> gameMode = 1);
+        buttonKey2.setOnAction(e -> gameMode = 2);
+
+        Button buttonSetDisabledRounds1 = new Button("Dis round 1");
+        Button buttonSetDisabledRounds2 = new Button("Dis round 2");
+        Button buttonSetDisabledRounds3 = new Button("Dis round 3");
+        buttonSetDisabledRounds1.setLayoutX(550);
+        buttonSetDisabledRounds1.setLayoutY(150);
+        buttonSetDisabledRounds2.setLayoutX(650);
+        buttonSetDisabledRounds2.setLayoutY(150);
+        buttonSetDisabledRounds3.setLayoutX(750);
+        buttonSetDisabledRounds3.setLayoutY(150);
+        buttonSetDisabledRounds1.setOnAction(e -> disabledRounds = 0);
+        buttonSetDisabledRounds2.setOnAction(e -> disabledRounds = 1);
+        buttonSetDisabledRounds3.setOnAction(e -> disabledRounds = 2);
+        settingsGroup.getChildren().add(buttonKey0);
+        settingsGroup.getChildren().add(buttonKey1);
+        settingsGroup.getChildren().add(buttonKey2);
+        settingsGroup.getChildren().add(buttonSetDisabledRounds1);
+        settingsGroup.getChildren().add(buttonSetDisabledRounds2);
+        settingsGroup.getChildren().add(buttonSetDisabledRounds3);
+        settingsGroup.getChildren().add(buttonAmountPlayers2);
+        settingsGroup.getChildren().add(buttonAmountPlayers3);
+        settingsGroup.getChildren().add(buttonAmountPlayers4);
+
+        return settingsGroup;
     }
 }
