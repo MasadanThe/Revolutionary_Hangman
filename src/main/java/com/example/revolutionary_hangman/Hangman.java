@@ -1,5 +1,8 @@
 package com.example.revolutionary_hangman;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -8,6 +11,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,8 +30,8 @@ public class Hangman extends Application {
     public void start(Stage stage) throws IOException {
 
 
-        final int WIDTH = 1500;
-        final int HEIGHT = 800;
+        final int WIDTH = 1280;
+        final int HEIGHT = 720;
 
 
         ArrayList<Player> playersList = new ArrayList<>();
@@ -95,6 +99,14 @@ public class Hangman extends Application {
         Scene playerScene = new Scene(testGroup, WIDTH, HEIGHT);
         playerScene.setFill(Color.WHITE);
         playerScene = sceneSetKeyPress(playerScene);
+
+        // Timeline is the runs every 0.2 seconds
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), ev -> {
+
+        }));
+        // Runs the timeline forever
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
 
         // Stage
         stage.setTitle("Hello!");
