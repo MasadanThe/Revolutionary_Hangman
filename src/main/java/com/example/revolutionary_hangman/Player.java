@@ -1,5 +1,9 @@
 package com.example.revolutionary_hangman;
 
+import javafx.scene.shape.Shape;
+
+import java.util.List;
+
 public class Player {
 
 
@@ -54,8 +58,17 @@ public class Player {
 
 
 
-    public void createDrawing(int xPosition, int yPosition, int width, int height) {
+    public void createDrawing() {
+            man.setWidth(width);
+            man.setHeight(height);
+            man.setxPosition(xPosition);
+            man.setyPosition(yPosition);
+            man.createDrawing();
 
+    }
+
+    public List<Shape> getDrawing(){
+            return man.getDrawing();
     }
 }
 
