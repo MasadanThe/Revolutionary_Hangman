@@ -53,9 +53,14 @@ public class Hangman extends Application {
         // Settings Group
         Group settingsGroup = createSettingsGroup();
 
+        // Choose word group
+        Group chooseWordGroup = new Group();
 
         //Scene for settings
         Scene settingScene = new Scene(settingsGroup, WIDTH, HEIGHT);
+
+        //Scene for creating word
+        Scene chooseWordScene = new Scene(chooseWordGroup, WIDTH, HEIGHT);
 
         Scene playerScene = new Scene(testGroup, WIDTH, HEIGHT);
         playerScene.setFill(Color.WHITE);
@@ -64,9 +69,17 @@ public class Hangman extends Application {
         // Timeline is the runs every 0.2 seconds
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), ev -> {
 
+            // settingsScene
             if (state == 0)
             {
                 stage.setScene(settingScene);
+            }
+            //
+            else if (state == 1)
+            {
+
+            } else if (state == 2) {
+
             }
 
         }));
