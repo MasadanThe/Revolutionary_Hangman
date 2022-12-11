@@ -36,12 +36,15 @@ public class Hangman extends Application {
     private ArrayList<Player> playersList = new ArrayList<>();
     private Group playersDrawing = new Group();
 
+    private Stage stage = new Stage();
+
 
 
     private char forbiddenVowel;
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage startStage) throws IOException {
 
+        stage = startStage;
 
         // Test man
         Man testMan = new Man(0,0, 400, 800);
@@ -64,11 +67,11 @@ public class Hangman extends Application {
         //Scene for creating word
         Scene chooseWordScene = new Scene(chooseWordGroup, WIDTH, HEIGHT);
 
-        Scene playScene = new Scene(testGroup, WIDTH, HEIGHT);
+        Scene playScene = new Scene(playersDrawing, WIDTH, HEIGHT);
         playScene.setFill(Color.WHITE);
         playScene = sceneSetKeyPress(playScene);
 
-        run(stage, playScene);
+        run(startStage, playScene);
 
         // Stage
         stage.setTitle("Hangman!");
@@ -84,6 +87,10 @@ public class Hangman extends Application {
             if (state == 0 && start == true)
             {
                 playersList = createPlayers(WIDTH, HEIGHT, amountPlayers);
+                for (Player player: playersList) {
+                    playersDrawing.getChildren().addAll(player.getDrawing());
+
+                }
                 start = false;
                 stage.setScene(playScene);
             }
@@ -166,6 +173,7 @@ public class Hangman extends Application {
         for(int i = 0; i < players; i++)
         {
             Player player = new Player(newXPosition, 0, playerWidth, height);
+            player.createDrawing();
             playersList.add(player);
             newXPosition += playerWidth;
         }
@@ -231,7 +239,7 @@ public class Hangman extends Application {
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                start = true;
+
             }
         });
         settingsGroup.getChildren().add(startButton);
