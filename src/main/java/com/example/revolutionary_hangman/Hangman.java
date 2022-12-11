@@ -38,6 +38,18 @@ public class Hangman extends Application {
 
     private Stage stage = new Stage();
 
+    // Settings Group
+    private Group settingsGroup = createSettingsGroup();
+
+    // Choose word group
+    private Group chooseWordGroup = new Group();
+
+    //Scene for settings
+    private Scene settingScene = new Scene(settingsGroup, WIDTH, HEIGHT);
+
+    //Scene for creating word
+    private Scene chooseWordScene = new Scene(chooseWordGroup, WIDTH, HEIGHT);
+
 
 
     private char forbiddenVowel;
@@ -55,17 +67,9 @@ public class Hangman extends Application {
         testGroup.getChildren().addAll(testMan.getDrawing());
 
 
-        // Settings Group
-        Group settingsGroup = createSettingsGroup();
 
-        // Choose word group
-        Group chooseWordGroup = new Group();
 
-        //Scene for settings
-        Scene settingScene = new Scene(settingsGroup, WIDTH, HEIGHT);
-
-        //Scene for creating word
-        Scene chooseWordScene = new Scene(chooseWordGroup, WIDTH, HEIGHT);
+        createSettingsGroup();
 
         Scene playScene = new Scene(playersDrawing, WIDTH, HEIGHT);
         playScene.setFill(Color.WHITE);
@@ -239,7 +243,7 @@ public class Hangman extends Application {
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
+                stage.setScene();
             }
         });
         settingsGroup.getChildren().add(startButton);
