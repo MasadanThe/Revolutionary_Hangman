@@ -1,76 +1,83 @@
 package com.example.revolutionary_hangman;
 
-import java.util.ArrayList;
+import javafx.scene.shape.Shape;
+
+import java.util.List;
 
 public class Player {
 
-  //instance of man begins whit private
-  private Man man= new Man();
+
+    private Man man= new Man();
+
+    private String name;
+    private String word;
+
+    public int points;
+    public int xPosition;
+    public int yPosition;
+    public int width;
+    public int height;
+
+    public Player(int xPosition, int yPosition, int width, int height){
+        this.xPosition = xPosition;
+        this.yPosition = yPosition;
+        this.width = width;
+        this.height = height;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setWord(String word) {
+        this.word = word;
+    }
+
+    public String getWord() {
+        return word;
+    }
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
+    public int getxPosition() {
+        return xPosition;
+    }
+
+    public int getyPosition() {
+        return yPosition;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
 
 
-        private String name;
-        public int points;
-        private String word;
-        public int xPosition;
-        public int yPosition;
-        public int width;
-        public int height;
 
 
-        ArrayList<Character> wordAsArrayList = new ArrayList<>();
+    public void createDrawing() {
+        man.setWidth(width);
+        man.setHeight(height);
+        man.setxPosition(xPosition);
+        man.setyPosition(yPosition);
+        man.createDrawing();
 
+    }
 
-
-        public Player(int xPosition, int yPosition, int width, int height){
-            this.xPosition = xPosition;
-            this.yPosition = yPosition;
-            this.width = width;
-            this.height = height;
-        }
-
-        public String getName() {
-           return name;
-        }
-         public int getPoints() {
-           return points;
-        }
-        public void setPoints(int points) {
-            this.points = points;
-        }
-        public void setWord(String word) {
-            this.word = word;
-        }
-
-        public String getWord() {
-            return word;
-        }
-
-        public int getxPosition() {
-            return xPosition;
-        }
-
-        public int getyPosition() {
-            return yPosition;
-        }
-
-        public int getWidth() {
-            return width;
-        }
-
-       public int getHeight() {
-            return height;
-        }
-
-
-        public void checkForCharacter() {
-         // ArrayList<Character> wordAsArrayList = new ArrayList<>();
-        }
-        public void wrongWord(){
-
-        }
-
-    public void createDrawing(int xPosition, int yPosition, int width, int height) {
-
+    public List<Shape> getDrawing(){
+        return man.getDrawing();
     }
 }
 
