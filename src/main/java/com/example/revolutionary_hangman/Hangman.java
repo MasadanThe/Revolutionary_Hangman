@@ -9,6 +9,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -78,6 +79,10 @@ public class Hangman extends Application {
 
         chooseWordScene.setFill(Color.WHITE);
         chooseWordScene = sceneSetKeyPress(chooseWordScene);
+//        TextField chooseWord = new TextField();
+//        chooseWord.setLayoutX(550);
+//        chooseWord.setLayoutY(90);
+//        chooseWordScene.getChildren().add(chooseWord);
 
         run();
 
