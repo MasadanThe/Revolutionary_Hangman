@@ -2,73 +2,85 @@ package com.example.revolutionary_hangman;
 
 import javafx.scene.shape.Shape;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
 
+    private Man man= new Man();
 
-  private Man man= new Man();
+    private String name;
+    private String word;
 
-        private String name;
-        private String word;
-        public int xPosition;
-        public int yPosition;
-        public int width;
-        public int height;
+    public int points;
+    public int xPosition;
+    public int yPosition;
+    public int width;
+    public int height;
 
-        public Player(int xPosition, int yPosition, int width, int height){
-            this.xPosition = xPosition;
-            this.yPosition = yPosition;
-            this.width = width;
-            this.height = height;
-        }
+    ArrayList<Character> wordAsArrayList = new ArrayList<>();
 
-        public String getName() {
-            return name;
-        }
+    public Player(int xPosition, int yPosition, int width, int height){
+        this.xPosition = xPosition;
+        this.yPosition = yPosition;
+        this.width = width;
+        this.height = height;
+    }
 
-        public void setName(String name) {
-            this.name = name;
-        }
 
-        public void setWord(String word) {
-            this.word = word;
-        }
+    public String getName() {
+        return name;
+    }
 
-        public String getWord() {
-            return word;
-        }
+    public void setName(String name) {
+        this.name = name;
+    }
 
-        public int getxPosition() {
-            return xPosition;
-        }
+    public void setWord(String word) {
+        this.word = word;
+    }
 
-        public int getyPosition() {
-            return yPosition;
-        }
+    public String getWord() {
+        return word;
+    }
+    public int getPoints() {
+        return points;
+    }
 
-        public int getWidth() {
-            return width;
-        }
+    public void setPoints(int points) {
+        this.points = points;
+    }
 
-        public int getHeight() {
-            return height;
-        }
+    public int getxPosition() {
+        return xPosition;
+    }
+
+    public int getyPosition() {
+        return yPosition;
+    }
+
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
 
 
 
 
     public void createDrawing() {
-            man.setWidth(width);
-            man.setHeight(height);
-            man.setxPosition(xPosition);
-            man.setyPosition(yPosition);
-            man.createDrawing();
+        man.setWidth(width);
+        man.setHeight(height);
+        man.setxPosition(xPosition);
+        man.setyPosition(yPosition);
+        man.createDrawing();
 
     }
 
     public List<Shape> getDrawing(){
-            return man.getDrawing();
+        return man.getDrawing();
     }
 }
 
