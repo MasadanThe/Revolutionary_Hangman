@@ -2,10 +2,10 @@ package com.example.revolutionary_hangman;
 
 import javafx.scene.shape.Shape;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-
 
     private Man man= new Man();
 
@@ -18,12 +18,15 @@ public class Player {
     public int width;
     public int height;
 
+    ArrayList<Character> wordAsArrayList = new ArrayList<>();
+
     public Player(int xPosition, int yPosition, int width, int height){
         this.xPosition = xPosition;
         this.yPosition = yPosition;
         this.width = width;
         this.height = height;
     }
+
 
     public String getName() {
         return name;
