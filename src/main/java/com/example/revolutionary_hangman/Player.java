@@ -7,25 +7,29 @@ import java.util.List;
 
 public class Player {
 
-    private Man man= new Man();
+
+    private Man man = new Man();
 
     private String name;
     private String word;
-
     public int points;
     public int xPosition;
     public int yPosition;
     public int width;
     public int height;
 
-    ArrayList<Character> wordAsArrayList = new ArrayList<>();
+    private ArrayList<Character> wordAsArrayList;
 
-    public Player(int xPosition, int yPosition, int width, int height){
+    public Player(int xPosition, int yPosition, int width, int height) {
         this.xPosition = xPosition;
         this.yPosition = yPosition;
         this.width = width;
         this.height = height;
+
+        wordAsArrayList = new ArrayList<>();
     }
+   /* I player skapa ArrayList<char> "wordAsArrayList" som sparar ordet som bokstäver
+    så man kan skriva ut varje i taget.*/
 
 
     public String getName() {
@@ -43,6 +47,7 @@ public class Player {
     public String getWord() {
         return word;
     }
+
     public int getPoints() {
         return points;
     }
@@ -67,7 +72,18 @@ public class Player {
         return height;
     }
 
+    public Boolean checkForCharacter(char character) {
+        Boolean foundChar = false;
+        // Checks if the Character in word
+        for (int i = 0; i < word.length(); i++) {
 
+            if (word.charAt(i) == character) {
+                foundChar = true;
+            }
+        }
+
+        return foundChar;
+    }
 
 
     public void createDrawing() {
@@ -83,4 +99,3 @@ public class Player {
         return man.getDrawing();
     }
 }
-
