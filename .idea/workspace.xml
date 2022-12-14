@@ -95,7 +95,7 @@
       <workItem from="1670788000868" duration="1481000" />
       <workItem from="1670791067768" duration="3110000" />
       <workItem from="1670969417110" duration="1288000" />
-      <workItem from="1671020072694" duration="835000" />
+      <workItem from="1671020072694" duration="3075000" />
     </task>
     <task id="LOCAL−00001" summary="Start">
       <created>1670237078049</created>
@@ -136,7 +136,7 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Hangman.java</url>
           <line>271</line>
-          <option name="timeStamp" value="1" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

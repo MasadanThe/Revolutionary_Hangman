@@ -36,6 +36,7 @@ public class Hangman extends Application {
     private Group playersDrawing = new Group();
 
     private Stage stage = new Stage();
+    int playerIndex = 0;
 
     // Settings Group
     private Group settingsGroup = createSettingsGroup();
@@ -253,22 +254,17 @@ public class Hangman extends Application {
         return settingsGroup;
     }
 
-    //****//
+
     public Group createChooseWordGroup() {
-        int playerIndex = 0;
+
         Group chooseWordGroup = new Group();
-        playersList = createPlayers(WIDTH,HEIGHT,4);
+        playersList = createPlayers(WIDTH,HEIGHT,4); // temp
         TextField chooseWord = new TextField();
         chooseWord.setLayoutX(550);
         chooseWord.setLayoutY(90);
 
         chooseWordGroup.getChildren().add(chooseWord);
-//        chooseWord.setOnAction(new EventHandler<ActionEvent>() {
-//            @Override
-//            public void handle(ActionEvent actionEvent) {
-//                stage.setScene(chooseWordScene);
-//            }
-//        });
+
         Button enterWordButton = new Button("Enter your word");
         enterWordButton.setLayoutX(550);
         enterWordButton.setLayoutY(130);
@@ -276,6 +272,7 @@ public class Hangman extends Application {
             String word = chooseWord.getText();
             Player player = playersList.get(playerIndex);
             player.setWord(word);
+            playerIndex++;
                 });
         chooseWordGroup.getChildren().add(enterWordButton);
 
