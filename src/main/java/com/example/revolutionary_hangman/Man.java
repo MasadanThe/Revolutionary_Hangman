@@ -1,5 +1,6 @@
 package com.example.revolutionary_hangman;
 
+import javafx.scene.control.Button;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
@@ -169,5 +170,7 @@ public class Man {
         rightLeg.setEndY(rightLeg.getStartY() + body.getHeight() * 0.25);
         rightLeg.setFill(Color.BLACK);
         drawing.add(rightLeg);
+
+
     }
 }

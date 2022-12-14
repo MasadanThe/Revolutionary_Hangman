@@ -44,6 +44,7 @@ public class Hangman extends Application {
     // Choose word group
     private Group chooseWordGroup = createChooseWordGroup();
 
+
     //Scene for settings
     private Scene settingScene = new Scene(settingsGroup, WIDTH, HEIGHT);
 
@@ -72,14 +73,14 @@ public class Hangman extends Application {
 
         createSettingsGroup();
         createChooseWordGroup();
-        createplayersDrawing();
+        createplaySceneGroup();
 
-        playScene.setFill(Color.WHITE);
-        playScene = sceneSetKeyPress(playScene);
 
         chooseWordScene.setFill(Color.WHITE);
         chooseWordScene = sceneSetKeyPress(chooseWordScene);
 
+        playScene.setFill(Color.WHITE);
+        playScene = sceneSetKeyPress(playScene);
 
         run();
 
@@ -258,7 +259,7 @@ public class Hangman extends Application {
     public Group createChooseWordGroup() {
 
         Group chooseWordGroup = new Group();
-        playersList = createPlayers(WIDTH,HEIGHT,4); // temp
+        playersList = createPlayers(WIDTH, HEIGHT, 4); // temp
         TextField chooseWord = new TextField();
         chooseWord.setLayoutX(550);
         chooseWord.setLayoutY(90);
@@ -279,19 +280,21 @@ public class Hangman extends Application {
         return chooseWordGroup;
     }
 
-    public void createplayersDrawing() {
+    public Group createplaySceneGroup() {
 
-        Group playersDrawing = new Group();
+        Group playSceneGroup = new Group();
 
         Button nextRoundButton = new Button("Next Round");
         nextRoundButton.setLayoutX(300);
         nextRoundButton.setLayoutY(650);
-        nextRoundButton.setOnAction(event -> stage.setScene(playScene));
-        settingsGroup.getChildren().add(nextRoundButton);
+        nextRoundButton.setOnAction(event -> stage.setScene(settingScene));
 
 
+        playersDrawing.getChildren().add(nextRoundButton);
 
+
+        return playSceneGroup;
     }
 
-
 }
+
