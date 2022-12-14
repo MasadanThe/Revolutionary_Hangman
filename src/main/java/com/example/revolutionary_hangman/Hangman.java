@@ -272,7 +272,7 @@ public class Hangman extends Application {
             String word = chooseWord.getText();
             Player player = playersList.get(playerIndex);
             player.setWord(word);
-            playerIndex++;
+            playerIndex++;                                  // next player be able to enter word
                 });
         chooseWordGroup.getChildren().add(enterWordButton);
 

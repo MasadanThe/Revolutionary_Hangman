@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a149e8d0-89f4-40f0-bd67-15401872c27c" name="Changes" comment="Start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Hangman.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +94,7 @@
       <workItem from="1670788000868" duration="1481000" />
       <workItem from="1670791067768" duration="3110000" />
       <workItem from="1670969417110" duration="1288000" />
-      <workItem from="1671020072694" duration="3075000" />
+      <workItem from="1671020072694" duration="4616000" />
     </task>
     <task id="LOCAL−00001" summary="Start">
       <created>1670237078049</created>
@@ -129,16 +128,5 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Start" />
     <option name="LAST_COMMIT_MESSAGE" value="Start" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Hangman.java</url>
-          <line>271</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
