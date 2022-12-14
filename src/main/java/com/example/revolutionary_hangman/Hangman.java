@@ -53,15 +53,15 @@ public class Hangman extends Application {
     private Scene playScene = new Scene(playersDrawing, WIDTH, HEIGHT);
 
 
-
     private char forbiddenVowel;
+
     @Override
     public void start(Stage startStage) throws IOException {
 
         stage = startStage;
 
         // Test man
-        Man testMan = new Man(0,0, 400, 800);
+        Man testMan = new Man(0, 0, 400, 800);
         testMan.createDrawing();
 
         // Test Group
@@ -69,10 +69,8 @@ public class Hangman extends Application {
         testGroup.getChildren().addAll(testMan.getDrawing());
 
 
-
-
         createSettingsGroup();
-
+        createplayersDrawing();
 
         playScene.setFill(Color.WHITE);
         playScene = sceneSetKeyPress(playScene);
@@ -85,21 +83,18 @@ public class Hangman extends Application {
         stage.show();
     }
 
-    public void run(){
+    public void run() {
         // Timeline is the runs every 0.2 seconds
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), ev -> {
 
             // settingsScene
-            if (state == 0)
-            {
+            if (state == 0) {
             }
             // chooseWordScene
-            else if (state == 1)
-            {
+            else if (state == 1) {
             }
             // playScene
-            else if (state == 2)
-            {
+            else if (state == 2) {
             }
 
         }));
@@ -121,31 +116,27 @@ public class Hangman extends Application {
         return scene;
     }
 
-    public ArrayList<Integer> randomiseWhoToGuess(int players){
+    public ArrayList<Integer> randomiseWhoToGuess(int players) {
         Random random = new Random();
         // Store the order
         ArrayList<Integer> order = new ArrayList<>();
         Boolean isDone = false;
-        while (!isDone)
-        {
+        while (!isDone) {
             int randomNumber = random.nextInt(1, players);
             boolean foundNumber = false;
             // Checks if the random number already exist
-            for (int i = 0; i < order.size(); i++)
-            {
-                if (order.get(i) == randomNumber)
-                {
+            for (int i = 0; i < order.size(); i++) {
+                if (order.get(i) == randomNumber) {
                     foundNumber = true;
                 }
             }
 
             // If the number doesn't exist, add it to the order list
-            if (!foundNumber)
-            {
+            if (!foundNumber) {
                 order.add(randomNumber);
             }
             // If the list is full
-            if(order.size() == players){
+            if (order.size() == players) {
                 isDone = true;
             }
         }
@@ -154,7 +145,7 @@ public class Hangman extends Application {
 
     }
 
-    public char randomizeForbiddenVowel(){
+    public char randomizeForbiddenVowel() {
         Random random = new Random();
         char[] forbiddenVowels = {'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö'};
         // Randomize which index of the character that will be forbidden.
@@ -163,14 +154,13 @@ public class Hangman extends Application {
         return forbiddenVowels[forbiddenVowelIndex];
     }
 
-    public ArrayList<Player> createPlayers(int width, int height, int players){
+    public ArrayList<Player> createPlayers(int width, int height, int players) {
         ArrayList<Player> playersList = new ArrayList<>();
         int newXPosition = 0;
         int playerWidth = width / players;
 
         // Creates the number of players and add their new x position
-        for(int i = 0; i < players; i++)
-        {
+        for (int i = 0; i < players; i++) {
             Player player = new Player(newXPosition, 0, playerWidth, height);
             player.createDrawing();
             playersDrawing.getChildren().addAll(player.getDrawing());
@@ -181,8 +171,7 @@ public class Hangman extends Application {
         return playersList;
     }
 
-    public Group createSettingsGroup()
-    {
+    public Group createSettingsGroup() {
         Group settingsGroup = new Group();
 
         Button buttonAmountPlayers2 = new Button("Amount Players  2");
@@ -246,5 +235,23 @@ public class Hangman extends Application {
         settingsGroup.getChildren().add(startButton);
 
         return settingsGroup;
+    }
+
+    public void createplayersDrawing() {
+
+        Group playersDrawing = new Group();
+
+        Button nextRoundButton = new Button("Next Round");
+        nextRoundButton.setLayoutX(200);
+        nextRoundButton.setLayoutY(660);
+        nextRoundButton.setTextFill(Color.DARKGREEN);
+        nextRoundButton.setOnAction(event -> stage.setScene(playScene));
+        settingsGroup.getChildren().add(nextRoundButton);
+
+        /* Button settingsButton = new Button("Settings");
+         settingsButton.setLayoutX(550);
+         settingsButton.setLayoutY(250);
+         settingsButton.setOnAction(event -> stage.setScene(settingScene));
+         settingsGroup.getChildren().add(settingsButton);*/
     }
 }
