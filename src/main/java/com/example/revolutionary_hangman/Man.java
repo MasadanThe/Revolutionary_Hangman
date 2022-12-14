@@ -77,7 +77,7 @@ public class Man {
         base.setHeight(height * 0.05);
         base.setWidth(width * 0.6);
         base.setX(xPosition + width * 0.2);
-        base.setY(yPosition + height * 0.9);
+        base.setY(yPosition + height * 0.8);
         base.setFill(Color.BLACK);
         drawing.add(base);
 

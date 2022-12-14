@@ -9,7 +9,7 @@ import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.input.KeyCode;
+import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -36,12 +36,13 @@ public class Hangman extends Application {
     private Group playersDrawing = new Group();
 
     private Stage stage = new Stage();
+    int playerIndex = 0;
 
     // Settings Group
     private Group settingsGroup = createSettingsGroup();
 
     // Choose word group
-    private Group chooseWordGroup = new Group();
+    private Group chooseWordGroup = createChooseWordGroup();
 
     //Scene for settings
     private Scene settingScene = new Scene(settingsGroup, WIDTH, HEIGHT);
@@ -70,10 +71,15 @@ public class Hangman extends Application {
 
 
         createSettingsGroup();
+        createChooseWordGroup();
         createplayersDrawing();
 
         playScene.setFill(Color.WHITE);
         playScene = sceneSetKeyPress(playScene);
+
+        chooseWordScene.setFill(Color.WHITE);
+        chooseWordScene = sceneSetKeyPress(chooseWordScene);
+
 
         run();
 
@@ -222,9 +228,20 @@ public class Hangman extends Application {
         settingsGroup.getChildren().add(buttonAmountPlayers3);
         settingsGroup.getChildren().add(buttonAmountPlayers4);
 
+        Button choseWordButton = new Button("Chose Word");
+        choseWordButton.setLayoutX(550);
+        choseWordButton.setLayoutY(190);
+        choseWordButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                stage.setScene(chooseWordScene);
+            }
+        });
+        settingsGroup.getChildren().add(choseWordButton);
+
         Button startButton = new Button("Start");
         startButton.setLayoutX(550);
-        startButton.setLayoutY(200);
+        startButton.setLayoutY(240);
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -237,21 +254,44 @@ public class Hangman extends Application {
         return settingsGroup;
     }
 
+
+    public Group createChooseWordGroup() {
+
+        Group chooseWordGroup = new Group();
+        playersList = createPlayers(WIDTH,HEIGHT,4); // temp
+        TextField chooseWord = new TextField();
+        chooseWord.setLayoutX(550);
+        chooseWord.setLayoutY(90);
+
+        chooseWordGroup.getChildren().add(chooseWord);
+
+        Button enterWordButton = new Button("Enter your word");
+        enterWordButton.setLayoutX(550);
+        enterWordButton.setLayoutY(130);
+        enterWordButton.setOnAction(actionEvent -> {
+            String word = chooseWord.getText();
+            Player player = playersList.get(playerIndex);
+            player.setWord(word);
+            playerIndex++;                                  // next player be able to enter word
+        });
+        chooseWordGroup.getChildren().add(enterWordButton);
+
+        return chooseWordGroup;
+    }
+
     public void createplayersDrawing() {
 
         Group playersDrawing = new Group();
 
         Button nextRoundButton = new Button("Next Round");
-        nextRoundButton.setLayoutX(200);
-        nextRoundButton.setLayoutY(660);
-        nextRoundButton.setTextFill(Color.DARKGREEN);
+        nextRoundButton.setLayoutX(300);
+        nextRoundButton.setLayoutY(650);
         nextRoundButton.setOnAction(event -> stage.setScene(playScene));
         settingsGroup.getChildren().add(nextRoundButton);
 
-        /* Button settingsButton = new Button("Settings");
-         settingsButton.setLayoutX(550);
-         settingsButton.setLayoutY(250);
-         settingsButton.setOnAction(event -> stage.setScene(settingScene));
-         settingsGroup.getChildren().add(settingsButton);*/
+
+
     }
+
+
 }
