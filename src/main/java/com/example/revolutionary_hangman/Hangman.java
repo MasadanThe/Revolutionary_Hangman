@@ -263,19 +263,20 @@ public class Hangman extends Application {
         chooseWord.setLayoutY(90);
 
         chooseWordGroup.getChildren().add(chooseWord);
-        chooseWord.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                stage.setScene(chooseWordScene);
-            }
-        });
+//        chooseWord.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent actionEvent) {
+//                stage.setScene(chooseWordScene);
+//            }
+//        });
         Button enterWordButton = new Button("Enter your word");
         enterWordButton.setLayoutX(550);
         enterWordButton.setLayoutY(130);
         enterWordButton.setOnAction(actionEvent -> {
             String word = chooseWord.getText();
             Player player = playersList.get(playerIndex);
-                }
+            player.setWord(word);
+                });
         chooseWordGroup.getChildren().add(enterWordButton);
 
         return chooseWordGroup;
