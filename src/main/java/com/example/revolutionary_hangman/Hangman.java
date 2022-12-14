@@ -10,6 +10,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.Glow;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -287,6 +288,7 @@ public class Hangman extends Application {
         Button nextRoundButton = new Button("Next Round");
         nextRoundButton.setLayoutX(300);
         nextRoundButton.setLayoutY(650);
+        nextRoundButton.setTextFill(Color.FIREBRICK);
         nextRoundButton.setOnAction(event -> stage.setScene(settingScene));
 
 
