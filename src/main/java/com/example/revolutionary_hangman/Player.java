@@ -15,6 +15,8 @@ public class Player {
 
     private String name;
     private String word;
+
+    private ArrayList<Character> guessedWrong;
     public int points;
     public int xPosition;
     public int yPosition;
@@ -33,6 +35,7 @@ public class Player {
 
         wordAsArrayList = new ArrayList<>();
         drawing = new Group();
+        guessedWrong = new ArrayList<>();
     }
    /* I player skapa ArrayList<char> "wordAsArrayList" som sparar ordet som bokstäver
     så man kan skriva ut varje i taget.*/
@@ -105,6 +108,7 @@ public class Player {
     private List<Text> createText(){
         List<Text> textList = new ArrayList<>();
 
+        //Right word text
         Text rightWord = new Text();
         rightWord.setText(wordAsArrayList.toString());
         rightWord.setX(width * 0.1);
@@ -112,6 +116,15 @@ public class Player {
         rightWord.setFill(Color.BLACK);
         rightWord.setStyle("-fx-font: 25 arial;");
         textList.add(rightWord);
+
+        //Wrong guessed letter text
+        Text wrongLetter = new Text();
+        wrongLetter.setText(guessedWrong.toString());
+        wrongLetter.setX(width * 0.1);
+        wrongLetter.setY(height * 0.8);
+        wrongLetter.setFill(Color.BLACK);
+        wrongLetter.setStyle("-fx-font: 25 arial;");
+        textList.add(wrongLetter);
     }
 
 
