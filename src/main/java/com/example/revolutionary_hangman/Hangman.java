@@ -279,7 +279,6 @@ public class Hangman extends Application {
             player.setWord(word);
             playerIndex++;                                  // next player be able to enter word
         });
-                });
         chooseWordGroup.getChildren().add(enterWordButton);
 
         return chooseWordGroup;
@@ -302,5 +301,4 @@ public class Hangman extends Application {
         return playSceneGroup;
     }
 
-}
 }
