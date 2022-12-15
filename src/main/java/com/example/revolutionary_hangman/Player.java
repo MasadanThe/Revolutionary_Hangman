@@ -96,35 +96,48 @@ public class Player {
 
 
     public void createDrawing() {
+        // Creates the properties of Man and creates the picture
         man.setWidth(width);
         man.setHeight(height);
         man.setxPosition(xPosition);
         man.setyPosition(yPosition);
         man.createDrawing();
+
+        // Adds the man drawing
         drawing.getChildren().addAll(man.getDrawing());
+
+        // Adds the text
+        drawing.getChildren().addAll(createText());
 
     }
 
     private List<Text> createText(){
         List<Text> textList = new ArrayList<>();
 
-        //Right word text
-        Text rightWord = new Text();
-        rightWord.setText(wordAsArrayList.toString());
-        rightWord.setX(width * 0.1);
-        rightWord.setY(height * 0.75);
-        rightWord.setFill(Color.BLACK);
-        rightWord.setStyle("-fx-font: 25 arial;");
-        textList.add(rightWord);
+        String rightWord = "";
+        for (char character: wordAsArrayList) {
+            rightWord += character;
 
-        //Wrong guessed letter text
-        Text wrongLetter = new Text();
-        wrongLetter.setText(guessedWrong.toString());
-        wrongLetter.setX(width * 0.1);
-        wrongLetter.setY(height * 0.8);
-        wrongLetter.setFill(Color.BLACK);
-        wrongLetter.setStyle("-fx-font: 25 arial;");
-        textList.add(wrongLetter);
+        }
+        // Right word text
+        Text rightWordText = new Text();
+        rightWordText.setText(rightWord);
+        rightWordText.setX(width * 0.1);
+        rightWordText.setY(height * 0.75);
+        rightWordText.setFill(Color.BLACK);
+        rightWordText.setStyle("-fx-font: 25 arial;");
+        textList.add(rightWordText);
+
+        // Wrong guessed letter text
+        Text wrongLetterText = new Text();
+        wrongLetterText.setText(guessedWrong.toString());
+        wrongLetterText.setX(width * 0.1);
+        wrongLetterText.setY(height * 0.8);
+        wrongLetterText.setFill(Color.BLACK);
+        wrongLetterText.setStyle("-fx-font: 25 arial;");
+        textList.add(wrongLetterText);
+
+        return textList;
     }
 
 
