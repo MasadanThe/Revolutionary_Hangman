@@ -194,9 +194,9 @@ public class Hangman extends Application {
         buttonAmountPlayers3.setLayoutY(90);
         buttonAmountPlayers4.setLayoutX(790);
         buttonAmountPlayers4.setLayoutY(90);
-        buttonAmountPlayers2.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT-50, 2));
-        buttonAmountPlayers3.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT-50, 3));
-        buttonAmountPlayers4.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT-50, 4));
+        buttonAmountPlayers2.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT, 2));
+        buttonAmountPlayers3.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT, 3));
+        buttonAmountPlayers4.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT, 4));
 
         Button buttonKey0 = new Button("Selection Mode");
         Button buttonKey1 = new Button("Random Mode");

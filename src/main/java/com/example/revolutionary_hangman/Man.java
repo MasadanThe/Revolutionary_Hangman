@@ -78,13 +78,13 @@ public class Man {
         base.setHeight(height * 0.05);
         base.setWidth(width * 0.6);
         base.setX(xPosition + width * 0.2);
-        base.setY(yPosition + height * 0.8);
+        base.setY(yPosition + height * 0.7);
         base.setFill(Color.BLACK);
         drawing.add(base);
 
         // Create the pole
         Rectangle pole = new Rectangle();
-        pole.setHeight(height * 0.8);
+        pole.setHeight(height * 0.65);
         pole.setWidth(width * 0.05);
         pole.setX(base.getX() + base.getWidth() * 0.5 - pole.getWidth() * 0.5);
         pole.setY(base.getY() - pole.getHeight());
