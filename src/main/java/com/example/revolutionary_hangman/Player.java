@@ -2,6 +2,7 @@ package com.example.revolutionary_hangman;
 
 import javafx.scene.Group;
 import javafx.scene.shape.Shape;
+import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,6 +98,10 @@ public class Player {
         man.setyPosition(yPosition);
         man.createDrawing();
         drawing.getChildren().addAll(man.getDrawing());
+
+    }
+
+    private List<Text> createText(){
 
     }
 
