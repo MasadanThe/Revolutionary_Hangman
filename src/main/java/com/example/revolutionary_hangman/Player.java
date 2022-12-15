@@ -96,12 +96,12 @@ public class Player {
         man.setxPosition(xPosition);
         man.setyPosition(yPosition);
         man.createDrawing();
-        drawing = man.getDrawing();
+        drawing.getChildren().addAll(man.getDrawing());
 
     }
 
 
-    public List<Shape> getDrawing(){
+    public Group getDrawing(){
         return drawing;
     }
 }
