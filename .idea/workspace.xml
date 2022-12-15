@@ -3,7 +3,7 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
-  <component name="ChangeListManager">
+  <list name="ChangeListManager">
     <list default="true" id="a149e8d0-89f4-40f0-bd67-15401872c27c" name="Changes" comment="Start">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Hangman.java" afterDir="false" />
     <list default="true" id="50e10add-2d25-4c3c-afd5-44984fda132f" name="Changes" comment="Start">
@@ -13,7 +13,7 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
+  </list>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -133,4 +133,5 @@
     <MESSAGE value="Start" />
     <option name="LAST_COMMIT_MESSAGE" value="Start" />
   </component>
+  </list>
 </project>
