@@ -1,5 +1,6 @@
 package com.example.revolutionary_hangman;
 
+import javafx.scene.Group;
 import javafx.scene.shape.Shape;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class Player {
 
     private ArrayList<Character> wordAsArrayList;
 
-    private List<Shape> drawing;
+    private Group drawing;
 
     public Player(int xPosition, int yPosition, int width, int height) {
         this.xPosition = xPosition;
@@ -29,7 +30,7 @@ public class Player {
         this.height = height;
 
         wordAsArrayList = new ArrayList<>();
-        drawing = new ArrayList<>();
+        drawing = new Group();
     }
    /* I player skapa ArrayList<char> "wordAsArrayList" som sparar ordet som bokstäver
     så man kan skriva ut varje i taget.*/
