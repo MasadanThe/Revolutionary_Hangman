@@ -1,6 +1,7 @@
 package com.example.revolutionary_hangman;
 
 import javafx.scene.Group;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Shape;
 import javafx.scene.text.Text;
 
@@ -102,7 +103,15 @@ public class Player {
     }
 
     private List<Text> createText(){
+        List<Text> textList = new ArrayList<>();
 
+        Text rightWord = new Text();
+        rightWord.setText(wordAsArrayList.toString());
+        rightWord.setX(width * 0.1);
+        rightWord.setY(height * 0.75);
+        rightWord.setFill(Color.BLACK);
+        rightWord.setStyle("-fx-font: 25 arial;");
+        textList.add(rightWord);
     }
 
 
