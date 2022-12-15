@@ -128,19 +128,19 @@ public class Player {
         // Right word text
         Text rightWordText = new Text();
         rightWordText.setText(rightWord);
-        rightWordText.setX(width * 0.1);
-        rightWordText.setY(height * 0.75);
+        rightWordText.setX(width * 0.1 + xPosition);
+        rightWordText.setY(height * 0.78 + yPosition);
         rightWordText.setFill(Color.BLACK);
-        rightWordText.setStyle("-fx-font: 25 arial;");
+        rightWordText.setStyle("-fx-font: 15 arial;");
         textList.add(rightWordText);
 
         // Wrong guessed letter text
         Text wrongLetterText = new Text();
         wrongLetterText.setText(guessedWrong.toString());
-        wrongLetterText.setX(width * 0.1);
-        wrongLetterText.setY(height * 0.8);
+        wrongLetterText.setX(width * 0.1 + xPosition);
+        wrongLetterText.setY(height * 0.8 + yPosition);
         wrongLetterText.setFill(Color.BLACK);
-        wrongLetterText.setStyle("-fx-font: 25 arial;");
+        wrongLetterText.setStyle("-fx-font: 15 arial;");
         textList.add(wrongLetterText);
 
         return textList;
