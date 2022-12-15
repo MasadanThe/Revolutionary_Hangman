@@ -45,7 +45,6 @@ public class Hangman extends Application {
     // Choose word group
     private Group chooseWordGroup = createChooseWordGroup();
 
-
     //Scene for settings
     private Scene settingScene = new Scene(settingsGroup, WIDTH, HEIGHT);
 
@@ -82,6 +81,10 @@ public class Hangman extends Application {
 
         playScene.setFill(Color.WHITE);
         playScene = sceneSetKeyPress(playScene);
+
+        chooseWordScene.setFill(Color.WHITE);
+        chooseWordScene = sceneSetKeyPress(chooseWordScene);
+
 
         run();
 
@@ -276,6 +279,7 @@ public class Hangman extends Application {
             player.setWord(word);
             playerIndex++;                                  // next player be able to enter word
         });
+                });
         chooseWordGroup.getChildren().add(enterWordButton);
 
         return chooseWordGroup;
@@ -299,4 +303,4 @@ public class Hangman extends Application {
     }
 
 }
-
+}
