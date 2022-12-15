@@ -10,6 +10,7 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.effect.Glow;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -72,7 +73,11 @@ public class Hangman extends Application {
 
         createSettingsGroup();
         createChooseWordGroup();
+        createplaySceneGroup();
 
+
+        chooseWordScene.setFill(Color.WHITE);
+        chooseWordScene = sceneSetKeyPress(chooseWordScene);
 
         playScene.setFill(Color.WHITE);
         playScene = sceneSetKeyPress(playScene);
@@ -258,6 +263,7 @@ public class Hangman extends Application {
     public Group createChooseWordGroup() {
 
         Group chooseWordGroup = new Group();
+        playersList = createPlayers(WIDTH, HEIGHT, 4); // temp
         TextField chooseWord = new TextField();
         chooseWord.setLayoutX(550);
         chooseWord.setLayoutY(90);
@@ -272,9 +278,29 @@ public class Hangman extends Application {
             Player player = playersList.get(playerIndex);
             player.setWord(word);
             playerIndex++;                                  // next player be able to enter word
+        });
                 });
         chooseWordGroup.getChildren().add(enterWordButton);
 
         return chooseWordGroup;
     }
+
+    public Group createplaySceneGroup() {
+
+        Group playSceneGroup = new Group();
+
+        Button nextRoundButton = new Button("Next Round");
+        nextRoundButton.setLayoutX(300);
+        nextRoundButton.setLayoutY(650);
+        nextRoundButton.setTextFill(Color.FIREBRICK);
+        nextRoundButton.setOnAction(event -> stage.setScene(settingScene));
+
+
+        playersDrawing.getChildren().add(nextRoundButton);
+
+
+        return playSceneGroup;
+    }
+
+}
 }

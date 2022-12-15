@@ -4,6 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="a149e8d0-89f4-40f0-bd67-15401872c27c" name="Changes" comment="Start">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Hangman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/revolutionary_hangman/Hangman.java" afterDir="false" />
     <list default="true" id="50e10add-2d25-4c3c-afd5-44984fda132f" name="Changes" comment="Start">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -93,6 +95,8 @@
       <workItem from="1670786116110" duration="27000" />
       <workItem from="1670788000868" duration="1481000" />
       <workItem from="1670791067768" duration="3110000" />
+      <workItem from="1671019001455" duration="5424000" />
+      <workItem from="1671041715205" duration="11708000" />
       <workItem from="1671008684924" duration="773000" />
       <workItem from="1671029972563" duration="230000" />
     </task>
