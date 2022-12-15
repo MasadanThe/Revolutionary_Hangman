@@ -298,8 +298,8 @@ public class Hangman extends Application {
         Group playSceneGroup = new Group();
 
         Button nextRoundButton = new Button("Next Match");
-        nextRoundButton.setLayoutX(300);
-        nextRoundButton.setLayoutY(650);
+        nextRoundButton.setLayoutX(500);
+        nextRoundButton.setLayoutY(400);
         nextRoundButton.setTextFill(Color.FIREBRICK);
         nextRoundButton.setOnAction(event -> stage.setScene(chooseWordScene));
 
