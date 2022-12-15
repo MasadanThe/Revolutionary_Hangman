@@ -261,7 +261,7 @@ public class Hangman extends Application {
 
 
     public Group createChooseWordGroup() {
-
+        playersList = createPlayers(WIDTH, HEIGHT, 2));
         Group chooseWordGroup = new Group();
         TextField chooseWord = new TextField();
         chooseWord.setLayoutX(550);
@@ -276,13 +276,20 @@ public class Hangman extends Application {
             String word = chooseWord.getText();
             Player player = playersList.get(playerIndex);
             player.setWord(word);
+
+            if () {
+
+            }
             playerIndex++;                                  // next player be able to enter word
         });
         chooseWordGroup.getChildren().add(enterWordButton);
 
         return chooseWordGroup;
     }
-
+    public void changeToPlay () {
+        // when the last player entered word, scene is changing to playScene
+        stage.setScene(playScene);
+    }
     public Group createplaySceneGroup() {
 
         Group playSceneGroup = new Group();
