@@ -50,7 +50,13 @@ public class Player {
     }
 
     public void setWord(String word) {
+
         this.word = word;
+        wordAsArrayList = new ArrayList<>();
+        for (int i = 0; i < word.length(); i++)
+        {
+            wordAsArrayList.add('-');
+        }
     }
 
     public String getWord() {
