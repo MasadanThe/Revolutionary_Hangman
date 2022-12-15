@@ -263,7 +263,6 @@ public class Hangman extends Application {
     public Group createChooseWordGroup() {
 
         Group chooseWordGroup = new Group();
-        playersList = createPlayers(WIDTH, HEIGHT, 4); // temp
         TextField chooseWord = new TextField();
         chooseWord.setLayoutX(550);
         chooseWord.setLayoutY(90);
