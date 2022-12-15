@@ -20,6 +20,8 @@ public class Player {
 
     private ArrayList<Character> wordAsArrayList;
 
+    private List<Shape> drawing;
+
     public Player(int xPosition, int yPosition, int width, int height) {
         this.xPosition = xPosition;
         this.yPosition = yPosition;
@@ -27,6 +29,7 @@ public class Player {
         this.height = height;
 
         wordAsArrayList = new ArrayList<>();
+        drawing = new ArrayList<>();
     }
    /* I player skapa ArrayList<char> "wordAsArrayList" som sparar ordet som bokstäver
     så man kan skriva ut varje i taget.*/
@@ -92,10 +95,12 @@ public class Player {
         man.setxPosition(xPosition);
         man.setyPosition(yPosition);
         man.createDrawing();
+        drawing = man.getDrawing();
 
     }
 
+
     public List<Shape> getDrawing(){
-        return man.getDrawing();
+        return drawing;
     }
 }
