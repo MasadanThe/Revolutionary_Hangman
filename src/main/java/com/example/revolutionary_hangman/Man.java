@@ -80,6 +80,7 @@ public class Man {
         base.setX(xPosition + width * 0.2);
         base.setY(yPosition + height * 0.7);
         base.setFill(Color.BLACK);
+        base.setVisible(false);
         drawing.add(base);
 
         // Create the pole
@@ -89,6 +90,7 @@ public class Man {
         pole.setX(base.getX() + base.getWidth() * 0.5 - pole.getWidth() * 0.5);
         pole.setY(base.getY() - pole.getHeight());
         pole.setFill(Color.BLACK);
+        pole.setVisible(false);
         drawing.add(pole);
 
         // Create the roof
@@ -98,6 +100,7 @@ public class Man {
         roof.setX(pole.getX());
         roof.setY(pole.getY());
         roof.setFill(Color.BLACK);
+        roof.setVisible(false);
         drawing.add(roof);
 
         // Create stability pole
@@ -107,6 +110,7 @@ public class Man {
         stabilityPole.setEndX(roof.getX() + roof.getWidth() * 0.5);
         stabilityPole.setEndY(roof.getY());
         stabilityPole.setFill(Color.BLACK);
+        stabilityPole.setVisible(false);
         drawing.add(stabilityPole);
 
         // Create noose
@@ -116,6 +120,7 @@ public class Man {
         noose.setWidth(width * 0.01);
         noose.setHeight(height * 0.15);
         noose.setFill(Color.BLACK);
+        noose.setVisible(false);
         drawing.add(noose);
 
         // Create head
@@ -124,6 +129,7 @@ public class Man {
         head.setCenterX(noose.getX());
         head.setCenterY(noose.getY() + head.getRadius() + noose.getHeight());
         head.setFill(Color.BLACK);
+        head.setVisible(false);
         drawing.add(head);
 
         // Create body
@@ -133,6 +139,7 @@ public class Man {
         body.setHeight(pole.getHeight() * 0.4);
         body.setWidth(width * 0.01);
         body.setFill(Color.BLACK);
+        body.setVisible(false);
         drawing.add(body);
 
         // Create left arm
@@ -142,6 +149,7 @@ public class Man {
         leftArm.setEndX(body.getX() - body.getHeight() * 0.25);
         leftArm.setEndY(leftArm.getStartY() + body.getHeight() * 0.25);
         leftArm.setFill(Color.BLACK);
+        leftArm.setVisible(false);
         drawing.add(leftArm);
 
         // Create right arm
@@ -151,6 +159,7 @@ public class Man {
         rightArm.setEndX(body.getX() + body.getHeight() * 0.25);
         rightArm.setEndY(rightArm.getStartY() + body.getHeight() * 0.25);
         rightArm.setFill(Color.BLACK);
+        rightArm.setVisible(false);
         drawing.add(rightArm);
 
         // Create left leg
@@ -160,6 +169,7 @@ public class Man {
         leftLeg.setEndX(leftLeg.getStartX() - body.getHeight() * 0.25);
         leftLeg.setEndY(leftLeg.getStartY() + body.getHeight() * 0.25);
         leftLeg.setFill(Color.BLACK);
+        leftLeg.setVisible(false);
         drawing.add(leftLeg);
 
         // Create right leg
@@ -169,6 +179,7 @@ public class Man {
         rightLeg.setEndX(rightLeg.getStartX() + body.getHeight() * 0.25);
         rightLeg.setEndY(rightLeg.getStartY() + body.getHeight() * 0.25);
         rightLeg.setFill(Color.BLACK);
+        rightLeg.setVisible(false);
         drawing.add(rightLeg);
 
 
