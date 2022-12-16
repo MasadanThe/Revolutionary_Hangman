@@ -22,7 +22,7 @@ public class Player {
     public int yPosition;
     public int width;
     public int height;
-
+    public int wrongLetterCounter = 0;
     private ArrayList<Character> wordAsArrayList;
 
     private Group drawing;
@@ -146,7 +146,9 @@ public class Player {
         return textList;
     }
 
-
+    public void wrongWord () {
+        man.getDrawing().get(wrongLetterCounter).setVisible(true);
+    }
     public Group getDrawing(){
         return drawing;
     }
