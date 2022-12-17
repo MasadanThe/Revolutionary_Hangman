@@ -261,7 +261,7 @@ public class Hangman extends Application {
 
 
     public Group createChooseWordGroup() {
-        
+
         Group chooseWordGroup = new Group();
         TextField chooseWord = new TextField();
         chooseWord.setLayoutX(550);
@@ -297,17 +297,19 @@ public class Hangman extends Application {
 
         Group playSceneGroup = new Group();
 
-        Button nextRoundButton = new Button("Next Match");
-        nextRoundButton.setLayoutX(500);
-        nextRoundButton.setLayoutY(400);
-        nextRoundButton.setTextFill(Color.FIREBRICK);
-        nextRoundButton.setOnAction(event -> stage.setScene(chooseWordScene));
+        Button nextMatchButton = new Button("Next Match");
+        nextMatchButton.setLayoutX(500);
+        nextMatchButton.setLayoutY(400);
+        nextMatchButton.setTextFill(Color.FIREBRICK);
+        nextMatchButton.setOnAction(event -> stage.setScene(chooseWordScene));
 
 
-        playersDrawing.getChildren().add(nextRoundButton);
+        playersDrawing.getChildren().add(nextMatchButton);
 
 
         return playSceneGroup;
+
+
     }
 
 }
