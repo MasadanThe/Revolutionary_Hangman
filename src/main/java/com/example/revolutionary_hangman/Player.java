@@ -24,6 +24,7 @@ public class Player {
     public int height;
     public int wrongLetterCounter = 0;
     private ArrayList<Character> wordAsArrayList;
+    String rightWord;
 
     private Group drawing;
 
@@ -33,6 +34,8 @@ public class Player {
         this.width = width;
         this.height = height;
 
+
+        rightWord = "";
         wordAsArrayList = new ArrayList<>();
         drawing = new Group();
         guessedWrong = new ArrayList<>();
@@ -135,7 +138,7 @@ public class Player {
     private List<Text> createText(){
         List<Text> textList = new ArrayList<>();
 
-        String rightWord = "";
+
         for (char character: wordAsArrayList) {
             rightWord += character;
 
