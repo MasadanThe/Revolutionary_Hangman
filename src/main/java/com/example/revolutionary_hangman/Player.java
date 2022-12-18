@@ -91,20 +91,20 @@ public class Player {
     }
 
     public void updateText(){
-        List list = drawing.getChildren();
+        List listOfGroup = drawing.getChildren();
         Boolean foundFirstText = false;
-        for (int i = 0; i < list.size(); i++)
+        for (int i = 0; i < listOfGroup.size(); i++)
         {
-            if(list.get(i) instanceof Text)
+            if(listOfGroup.get(i) instanceof Text)
             {
                 if (!foundFirstText)
                 {
-                    ((Text) list.get(i)).setText(rightWord);
+                    ((Text) listOfGroup.get(i)).setText(rightWord);
                     foundFirstText = true;
                 }
                 else
                 {
-                    ((Text) list.get(i)).setText(guessedWrong.toString());
+                    ((Text) listOfGroup.get(i)).setText(guessedWrong.toString());
                 }
             }
         }
