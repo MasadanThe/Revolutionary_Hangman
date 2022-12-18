@@ -24,6 +24,7 @@ public class Player {
     public int height;
     public int wrongLetterCounter = 0;
     private ArrayList<Character> wordAsArrayList;
+    String rightWord;
 
     private Group drawing;
 
@@ -33,6 +34,8 @@ public class Player {
         this.width = width;
         this.height = height;
 
+
+        rightWord = "";
         wordAsArrayList = new ArrayList<>();
         drawing = new Group();
         guessedWrong = new ArrayList<>();
@@ -53,9 +56,14 @@ public class Player {
 
         this.word = word;
         wordAsArrayList = new ArrayList<>();
+
         for (int i = 0; i < word.length(); i++)
         {
             wordAsArrayList.add('-');
+        }
+        for (char character: wordAsArrayList) {
+            rightWord += character;
+
         }
     }
 
@@ -87,6 +95,26 @@ public class Player {
         return height;
     }
 
+    public void updateText(){
+        List listOfGroup = drawing.getChildren();
+        Boolean foundFirstText = false;
+        for (int i = 0; i < listOfGroup.size(); i++)
+        {
+            if(listOfGroup.get(i) instanceof Text)
+            {
+                if (!foundFirstText)
+                {
+                    ((Text) listOfGroup.get(i)).setText(rightWord);
+                    foundFirstText = true;
+                }
+                else
+                {
+                    ((Text) listOfGroup.get(i)).setText(guessedWrong.toString());
+                }
+            }
+        }
+    }
+
     public Boolean checkForCharacter(char character) {
         Boolean foundChar = false;
         // Checks if the Character in word
@@ -94,9 +122,15 @@ public class Player {
 
             if (word.charAt(i) == character) {
                 foundChar = true;
+                wordAsArrayList.set(i, character);
             }
         }
 
+        if(!foundChar)
+        {
+            //Adds the character to the list
+            guessedWrong.add(character);
+        }
         return foundChar;
     }
 
@@ -120,13 +154,10 @@ public class Player {
     private List<Text> createText(){
         List<Text> textList = new ArrayList<>();
 
-        String rightWord = "";
-        for (char character: wordAsArrayList) {
-            rightWord += character;
 
-        }
         // Right word text
         Text rightWordText = new Text();
+        System.out.println(rightWord);
         rightWordText.setText(rightWord);
         rightWordText.setX(width * 0.1 + xPosition);
         rightWordText.setY(height * 0.78 + yPosition);
@@ -145,6 +176,7 @@ public class Player {
 
         return textList;
     }
+
 
     public void wrongWord () {
         man.getDrawing().get(wrongLetterCounter).setVisible(true);

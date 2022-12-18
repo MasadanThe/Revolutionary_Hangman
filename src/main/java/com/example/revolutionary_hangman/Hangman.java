@@ -62,13 +62,6 @@ public class Hangman extends Application {
 
         stage = startStage;
 
-        // Test man
-        Man testMan = new Man(0, 0, 400, 800);
-        testMan.createDrawing();
-
-        // Test Group
-        Group testGroup = new Group();
-        testGroup.getChildren().addAll(testMan.getDrawing());
 
 
         createSettingsGroup();
@@ -98,15 +91,8 @@ public class Hangman extends Application {
         // Timeline is the runs every 0.2 seconds
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), ev -> {
 
-            // settingsScene
-            if (state == 0) {
-            }
-            // chooseWordScene
-            else if (state == 1) {
-            }
-            // playScene
-            else if (state == 2) {
-            }
+            updateDrawings();
+            playScene.setRoot(playersDrawing);
 
         }));
         // Runs the timeline forever
@@ -137,7 +123,7 @@ public class Hangman extends Application {
             boolean foundNumber = false;
             // Checks if the random number already exist
             for (int i = 0; i < order.size(); i++) {
-                if (order.get(i) == randomNumber) {
+                if (order.get(i) == randomNumber || randomNumber == order.size() - 1) {
                     foundNumber = true;
                 }
             }
@@ -259,6 +245,17 @@ public class Hangman extends Application {
         return settingsGroup;
     }
 
+    public void updateDrawings(){
+        playersDrawing = new Group();
+
+        for (Player player:playersList) {
+            playersDrawing.getChildren().addAll(player.getDrawing());
+        }
+
+        //Update the
+        playersDrawing.getChildren().addAll(createplaySceneGroup());
+    }
+
 
     public Group createChooseWordGroup() {
 
@@ -276,6 +273,7 @@ public class Hangman extends Application {
             String word = chooseWord.getText();
             Player player = playersList.get(playerIndex);
             player.setWord(word);
+            player.updateText();
 
             if (playerIndex == playersList.size() - 1) {
                 changeToPlay();
@@ -304,7 +302,7 @@ public class Hangman extends Application {
         nextMatchButton.setOnAction(event -> stage.setScene(chooseWordScene));
 
 
-        playersDrawing.getChildren().add(nextMatchButton);
+        playSceneGroup.getChildren().add(nextMatchButton);
 
 
         return playSceneGroup;
