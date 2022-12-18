@@ -252,6 +252,10 @@ public class Hangman extends Application {
         return settingsGroup;
     }
 
+    public void updateDrawings(){
+
+    }
+
 
     public Group createChooseWordGroup() {
 
