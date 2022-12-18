@@ -99,7 +99,12 @@ public class Player {
             {
                 if (!foundFirstText)
                 {
-                    ((Text) list.get(i)).setText();
+                    ((Text) list.get(i)).setText(rightWord);
+                    foundFirstText = true;
+                }
+                else
+                {
+                    ((Text) list.get(i)).setText(guessedWrong.toString());
                 }
             }
         }
