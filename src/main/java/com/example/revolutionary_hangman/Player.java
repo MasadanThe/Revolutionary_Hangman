@@ -120,6 +120,8 @@ public class Player {
             }
         }
 
+        //Adds the character to the list
+        guessedWrong.add(character);
         return foundChar;
     }
 
@@ -168,6 +170,7 @@ public class Player {
 
         return textList;
     }
+
 
     public void wrongWord () {
         man.getDrawing().get(wrongLetterCounter).setVisible(true);
