@@ -117,6 +117,7 @@ public class Player {
 
             if (word.charAt(i) == character) {
                 foundChar = true;
+                wordAsArrayList.set(i, character);
             }
         }
 
