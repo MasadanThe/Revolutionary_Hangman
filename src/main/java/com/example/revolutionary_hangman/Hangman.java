@@ -130,7 +130,7 @@ public class Hangman extends Application {
             boolean foundNumber = false;
             // Checks if the random number already exist
             for (int i = 0; i < order.size(); i++) {
-                if (order.get(i) == randomNumber) {
+                if (order.get(i) == randomNumber || randomNumber == order.size() - 1) {
                     foundNumber = true;
                 }
             }
