@@ -87,6 +87,21 @@ public class Player {
         return height;
     }
 
+    public void updateText(){
+        List list = drawing.getChildren();
+        Boolean foundFirstText = false;
+        for (int i = 0; i < list.size(); i++)
+        {
+            if(list.get(i) instanceof Text)
+            {
+                if (!foundFirstText)
+                {
+                    ((Text) list.get(i)).setText();
+                }
+            }
+        }
+    }
+
     public Boolean checkForCharacter(char character) {
         Boolean foundChar = false;
         // Checks if the Character in word
