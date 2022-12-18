@@ -276,6 +276,7 @@ public class Hangman extends Application {
             String word = chooseWord.getText();
             Player player = playersList.get(playerIndex);
             player.setWord(word);
+            player.updateText();
 
             if (playerIndex == playersList.size() - 1) {
                 changeToPlay();
