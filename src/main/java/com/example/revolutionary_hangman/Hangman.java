@@ -62,13 +62,6 @@ public class Hangman extends Application {
 
         stage = startStage;
 
-        // Test man
-        Man testMan = new Man(0, 0, 400, 800);
-        testMan.createDrawing();
-
-        // Test Group
-        Group testGroup = new Group();
-        testGroup.getChildren().addAll(testMan.getDrawing());
 
 
         createSettingsGroup();
