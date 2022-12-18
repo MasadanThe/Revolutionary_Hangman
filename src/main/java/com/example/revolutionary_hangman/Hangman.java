@@ -253,7 +253,14 @@ public class Hangman extends Application {
     }
 
     public void updateDrawings(){
+        playersDrawing = new Group();
 
+        for (Player player:playersList) {
+            playersDrawing.getChildren().addAll(player.getDrawing());
+        }
+
+        //Update the
+        playersDrawing.getChildren().addAll(createplaySceneGroup());
     }
 
 
@@ -302,7 +309,7 @@ public class Hangman extends Application {
         nextMatchButton.setOnAction(event -> stage.setScene(chooseWordScene));
 
 
-        playersDrawing.getChildren().add(nextMatchButton);
+        playSceneGroup.getChildren().add(nextMatchButton);
 
 
         return playSceneGroup;
