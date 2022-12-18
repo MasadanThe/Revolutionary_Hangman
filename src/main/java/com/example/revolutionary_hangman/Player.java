@@ -121,8 +121,11 @@ public class Player {
             }
         }
 
-        //Adds the character to the list
-        guessedWrong.add(character);
+        if(!foundChar)
+        {
+            //Adds the character to the list
+            guessedWrong.add(character);
+        }
         return foundChar;
     }
 
