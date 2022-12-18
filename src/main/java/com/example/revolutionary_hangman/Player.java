@@ -56,9 +56,14 @@ public class Player {
 
         this.word = word;
         wordAsArrayList = new ArrayList<>();
+
         for (int i = 0; i < word.length(); i++)
         {
             wordAsArrayList.add('-');
+        }
+        for (char character: wordAsArrayList) {
+            rightWord += character;
+
         }
     }
 
@@ -150,12 +155,9 @@ public class Player {
         List<Text> textList = new ArrayList<>();
 
 
-        for (char character: wordAsArrayList) {
-            rightWord += character;
-
-        }
         // Right word text
         Text rightWordText = new Text();
+        System.out.println(rightWord);
         rightWordText.setText(rightWord);
         rightWordText.setX(width * 0.1 + xPosition);
         rightWordText.setY(height * 0.78 + yPosition);

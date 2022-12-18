@@ -91,15 +91,8 @@ public class Hangman extends Application {
         // Timeline is the runs every 0.2 seconds
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(0.2), ev -> {
 
-            // settingsScene
-            if (state == 0) {
-            }
-            // chooseWordScene
-            else if (state == 1) {
-            }
-            // playScene
-            else if (state == 2) {
-            }
+            updateDrawings();
+            playScene.setRoot(playersDrawing);
 
         }));
         // Runs the timeline forever
