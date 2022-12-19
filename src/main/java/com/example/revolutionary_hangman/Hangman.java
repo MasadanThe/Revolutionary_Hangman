@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Hangman extends Application {
-    private String pressedKey;
+    private char pressedKey;
 
     static int amountPlayers;
     static int gameMode;
@@ -110,7 +110,7 @@ public class Hangman extends Application {
     public Scene sceneSetKeyPress(Scene scene) {
         //Records the key press and stores it in pressedKey
         scene.addEventHandler(KeyEvent.KEY_PRESSED, (key) -> {
-            pressedKey = key.getText();
+            pressedKey = key.getText().charAt(0);
         });
 
         return scene;
@@ -334,7 +334,24 @@ public class Hangman extends Application {
         {
             order = randomiseWhoToGuess(playersList.size());
         }
-        if ()
+        if (turn < playersList.size())
+        {
+            if (!playersList.get(order.get(turn)).checkForCharacter(pressedKey))
+            {
+                playersList.get(turn).wrongWord();
+            }
+            turn++;
+            if (turn == playersList.size()-1)
+            {
+
+            }
+        }
+        if (turn == playersList.size())
+        {
+            order = randomiseWhoToGuess(playersList.size());
+            turn = 0;
+        }
+
     }
 
 }
