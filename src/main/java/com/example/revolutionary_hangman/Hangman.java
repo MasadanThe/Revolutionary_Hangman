@@ -318,7 +318,7 @@ public class Hangman extends Application {
         nextMatchButton.setLayoutX(500);
         nextMatchButton.setLayoutY(400);
         nextMatchButton.setTextFill(Color.FIREBRICK);
-        nextMatchButton.setOnAction(event -> stage.setScene(chooseWordScene));
+        nextMatchButton.setOnAction(event -> play());
 
 
         playSceneGroup.getChildren().add(nextMatchButton);
