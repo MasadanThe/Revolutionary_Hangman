@@ -9,7 +9,9 @@ import javafx.event.EventHandler;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.effect.Glow;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
@@ -171,44 +173,60 @@ public class Hangman extends Application {
     public Group createSettingsGroup() {
         Group settingsGroup = new Group();
 
-        Button buttonAmountPlayers2 = new Button("Amount Players  2");
-        Button buttonAmountPlayers3 = new Button("Amount Players  3");
-        Button buttonAmountPlayers4 = new Button("Amount Players  4");
-        buttonAmountPlayers2.setLayoutX(550);
-        buttonAmountPlayers2.setLayoutY(90);
-        buttonAmountPlayers3.setLayoutX(670);
-        buttonAmountPlayers3.setLayoutY(90);
-        buttonAmountPlayers4.setLayoutX(790);
-        buttonAmountPlayers4.setLayoutY(90);
-        buttonAmountPlayers2.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT, 2));
+        RadioButton buttonAmountPlayers2 = new RadioButton("Amount Players  2");
+        RadioButton buttonAmountPlayers3 = new RadioButton("Amount Players  3");
+        RadioButton buttonAmountPlayers4 = new RadioButton("Amount Players  4");
+        buttonAmountPlayers2.setLayoutX(250);
+        buttonAmountPlayers2.setLayoutY(110);
+        buttonAmountPlayers3.setLayoutX(250);
+        buttonAmountPlayers3.setLayoutY(130);
+        buttonAmountPlayers4.setLayoutX(250);
+        buttonAmountPlayers4.setLayoutY(150);
+        buttonAmountPlayers2.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT, 2)); // creates all types of players when all items are clicked
         buttonAmountPlayers3.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT, 3));
         buttonAmountPlayers4.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT, 4));
 
-        Button buttonKey0 = new Button("Selection Mode");
-        Button buttonKey1 = new Button("Random Mode");
-        Button buttonKey2 = new Button("Queue Mode");
-        buttonKey0.setLayoutX(550);
-        buttonKey0.setLayoutY(120);
-        buttonKey1.setLayoutX(650);
-        buttonKey1.setLayoutY(120);
-        buttonKey2.setLayoutX(750);
-        buttonKey2.setLayoutY(120);
+        ToggleGroup amountButtons = new ToggleGroup();
+        buttonAmountPlayers2.setToggleGroup(amountButtons);
+        buttonAmountPlayers3.setToggleGroup(amountButtons);
+        buttonAmountPlayers4.setToggleGroup(amountButtons);
+
+        RadioButton buttonKey0 = new RadioButton("Selection Mode");
+        RadioButton buttonKey1 = new RadioButton("Random Mode");
+        RadioButton buttonKey2 = new RadioButton("Queue Mode");
+        buttonKey0.setLayoutX(250);
+        buttonKey0.setLayoutY(180);
+        buttonKey1.setLayoutX(250);
+        buttonKey1.setLayoutY(200);
+        buttonKey2.setLayoutX(250);
+        buttonKey2.setLayoutY(220);
         buttonKey0.setOnAction(e -> gameMode = 0);
         buttonKey1.setOnAction(e -> gameMode = 1);
         buttonKey2.setOnAction(e -> gameMode = 2);
 
-        Button buttonSetDisabledRounds1 = new Button("Dis round 1");
-        Button buttonSetDisabledRounds2 = new Button("Dis round 2");
-        Button buttonSetDisabledRounds3 = new Button("Dis round 3");
+        ToggleGroup modeButtons = new ToggleGroup();
+        buttonKey0.setToggleGroup(modeButtons);
+        buttonKey1.setToggleGroup(modeButtons);
+        buttonKey2.setToggleGroup(modeButtons);
+
+        RadioButton buttonSetDisabledRounds1 = new RadioButton("Random vowel will be banned for 1 round");
+        RadioButton buttonSetDisabledRounds2 = new RadioButton("Random vowel will be banned for 2 rounds");
+        RadioButton buttonSetDisabledRounds3 = new RadioButton("Random vowel will be banned for 3 rounds");
         buttonSetDisabledRounds1.setLayoutX(550);
-        buttonSetDisabledRounds1.setLayoutY(150);
-        buttonSetDisabledRounds2.setLayoutX(650);
-        buttonSetDisabledRounds2.setLayoutY(150);
-        buttonSetDisabledRounds3.setLayoutX(750);
+        buttonSetDisabledRounds1.setLayoutY(110);
+        buttonSetDisabledRounds2.setLayoutX(550);
+        buttonSetDisabledRounds2.setLayoutY(130);
+        buttonSetDisabledRounds3.setLayoutX(550);
         buttonSetDisabledRounds3.setLayoutY(150);
         buttonSetDisabledRounds1.setOnAction(e -> disabledRounds = 0);
         buttonSetDisabledRounds2.setOnAction(e -> disabledRounds = 1);
         buttonSetDisabledRounds3.setOnAction(e -> disabledRounds = 2);
+
+        ToggleGroup bannedVowelBut = new ToggleGroup();
+        buttonSetDisabledRounds1.setToggleGroup(bannedVowelBut);
+        buttonSetDisabledRounds2.setToggleGroup(bannedVowelBut);
+        buttonSetDisabledRounds3.setToggleGroup(bannedVowelBut);
+
         settingsGroup.getChildren().add(buttonKey0);
         settingsGroup.getChildren().add(buttonKey1);
         settingsGroup.getChildren().add(buttonKey2);

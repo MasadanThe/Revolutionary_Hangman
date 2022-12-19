@@ -180,6 +180,7 @@ public class Player {
 
     public void wrongWord () {
         man.getDrawing().get(wrongLetterCounter).setVisible(true);
+        wrongLetterCounter++;
     }
     public Group getDrawing(){
         return drawing;
