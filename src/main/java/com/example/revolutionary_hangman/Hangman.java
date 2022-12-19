@@ -31,10 +31,7 @@ public class Hangman extends Application {
     private final int WIDTH = 1280;
     private final int HEIGHT = 720;
 
-    private // 0 = settingsScene, 1 = chooseWordScene, 2 = playScene
-    int state = 0;
-
-
+    private int turn = 0;
 
     private ArrayList<Integer> order = new ArrayList<>();
 
