@@ -35,6 +35,10 @@ public class Hangman extends Application {
     int state = 0;
 
 
+
+    private ArrayList<Integer> order = new ArrayList<>();
+
+
     private ArrayList<Player> playersList = new ArrayList<>();
     private Group playersDrawing = new Group();
 
@@ -326,6 +330,14 @@ public class Hangman extends Application {
         return playSceneGroup;
 
 
+    }
+
+    public void play(){
+        if (order.isEmpty())
+        {
+            order = randomiseWhoToGuess(playersList.size());
+        }
+        if ()
     }
 
 }
