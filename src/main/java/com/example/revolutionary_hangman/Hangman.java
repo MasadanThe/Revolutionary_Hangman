@@ -315,7 +315,7 @@ public class Hangman extends Application {
 
         Group playSceneGroup = new Group();
 
-        Button nextMatchButton = new Button("Next Match");
+        Button nextMatchButton = new Button("Guess");
         nextMatchButton.setLayoutX(500);
         nextMatchButton.setLayoutY(400);
         nextMatchButton.setTextFill(Color.FIREBRICK);
@@ -331,22 +331,28 @@ public class Hangman extends Application {
     }
 
     public void play(){
+        // If there is no order
         if (order.isEmpty())
         {
             order = randomiseWhoToGuess(playersList.size());
         }
+        //If there is a players turn
         if (turn < playersList.size())
         {
+            //Look for the player who gets guessed on and check if it is not the right character
             if (!playersList.get(order.get(turn)).checkForCharacter(pressedKey))
             {
+                //Sets the player that guessed wrong to start getting hanged
                 playersList.get(turn).wrongWord();
             }
+            //If all the players have guessed the button should change text to "Next round"
             if (turn == playersList.size()-1)
             {
 
             }
             turn++;
         }
+        //If it is new round, get a new order and the button should change text to "Guess"
         if (turn == playersList.size())
         {
             order = randomiseWhoToGuess(playersList.size());
