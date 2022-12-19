@@ -182,7 +182,7 @@ public class Hangman extends Application {
         buttonAmountPlayers3.setLayoutY(130);
         buttonAmountPlayers4.setLayoutX(250);
         buttonAmountPlayers4.setLayoutY(150);
-        buttonAmountPlayers2.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT, 2)); // creates all types of players when all items are clicked
+        buttonAmountPlayers2.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT, 2));
         buttonAmountPlayers3.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT, 3));
         buttonAmountPlayers4.setOnAction(e -> playersList = createPlayers(WIDTH, HEIGHT, 4));
 
