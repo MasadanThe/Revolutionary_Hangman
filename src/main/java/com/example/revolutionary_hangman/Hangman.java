@@ -12,7 +12,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
-import javafx.scene.effect.Glow;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -70,7 +69,7 @@ public class Hangman extends Application {
 
         createSettingsGroup();
         createChooseWordGroup();
-        createplaySceneGroup();
+        createPlaySceneGroup();
 
 
         chooseWordScene.setFill(Color.WHITE);
@@ -273,7 +272,7 @@ public class Hangman extends Application {
         }
 
         //Update the
-        playersDrawing.getChildren().addAll(createplaySceneGroup());
+        playersDrawing.getChildren().addAll(createPlaySceneGroup());
     }
 
 
@@ -311,7 +310,7 @@ public class Hangman extends Application {
         stage.setScene(playScene);
     }
 
-    public Group createplaySceneGroup() {
+    public Group createPlaySceneGroup() {
 
         Group playSceneGroup = new Group();
 
