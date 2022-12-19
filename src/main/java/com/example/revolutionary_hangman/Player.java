@@ -61,10 +61,6 @@ public class Player {
         {
             wordAsArrayList.add('-');
         }
-        for (char character: wordAsArrayList) {
-            rightWord += character;
-
-        }
     }
 
     public String getWord() {
@@ -104,7 +100,7 @@ public class Player {
             {
                 if (!foundFirstText)
                 {
-                    ((Text) listOfGroup.get(i)).setText(rightWord);
+                    ((Text) listOfGroup.get(i)).setText(wordAsArrayList.toString());
                     foundFirstText = true;
                 }
                 else
@@ -123,6 +119,7 @@ public class Player {
             if (word.charAt(i) == character) {
                 foundChar = true;
                 wordAsArrayList.set(i, character);
+                System.out.println(wordAsArrayList.toString());
             }
         }
 

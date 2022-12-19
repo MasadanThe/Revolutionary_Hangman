@@ -34,6 +34,7 @@ public class Hangman extends Application {
     private int turn = 0;
 
     private ArrayList<Integer> order = new ArrayList<>();
+    Random random = new Random();
 
 
     private ArrayList<Player> playersList = new ArrayList<>();
@@ -117,16 +118,15 @@ public class Hangman extends Application {
     }
 
     public ArrayList<Integer> randomiseWhoToGuess(int players) {
-        Random random = new Random();
         // Store the order
         ArrayList<Integer> order = new ArrayList<>();
         Boolean isDone = false;
         while (!isDone) {
-            int randomNumber = random.nextInt(1, players);
+            int randomNumber = random.nextInt(players);
             boolean foundNumber = false;
             // Checks if the random number already exist
             for (int i = 0; i < order.size(); i++) {
-                if (order.get(i) == randomNumber || randomNumber == order.size() - 1) {
+                if (order.get(i) == randomNumber || randomNumber == order.size()+1) {
                     foundNumber = true;
                 }
             }
@@ -268,6 +268,7 @@ public class Hangman extends Application {
         playersDrawing = new Group();
 
         for (Player player:playersList) {
+            player.updateText();
             playersDrawing.getChildren().addAll(player.getDrawing());
         }
 
@@ -340,11 +341,11 @@ public class Hangman extends Application {
             {
                 playersList.get(turn).wrongWord();
             }
-            turn++;
             if (turn == playersList.size()-1)
             {
 
             }
+            turn++;
         }
         if (turn == playersList.size())
         {
