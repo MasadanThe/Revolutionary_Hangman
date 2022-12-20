@@ -56,9 +56,11 @@ public class Hangman extends Application {
 
     // Scene for playing
     private Scene playScene = new Scene(playersDrawing, WIDTH, HEIGHT);
+    private static char forbiddenVowel;
+    public static char getForbiddenVowel() {
+        return forbiddenVowel;
+    }
 
-
-    private char forbiddenVowel;
 
     @Override
     public void start(Stage startStage) throws IOException {
@@ -149,7 +151,7 @@ public class Hangman extends Application {
         char[] forbiddenVowels = {'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö'};
         // Randomize which index of the character that will be forbidden.
         int forbiddenVowelIndex = random.nextInt(forbiddenVowels.length - 1);
-
+        System.out.println(forbiddenVowels[forbiddenVowelIndex]);
         return forbiddenVowels[forbiddenVowelIndex];
     }
 
@@ -299,6 +301,7 @@ public class Hangman extends Application {
             }
             chooseWord.clear();
             playerIndex++;                                  // next player be able to enter word
+            randomizeForbiddenVowel();
         });
         chooseWordGroup.getChildren().add(enterWordButton);
 

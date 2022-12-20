@@ -25,7 +25,7 @@ public class Player {
     public int wrongLetterCounter = 0;
     private ArrayList<Character> wordAsArrayList;
     String rightWord;
-
+    private int disabledRoundsLetter = 0;
     private Group drawing;
 
     public Player(int xPosition, int yPosition, int width, int height) {
@@ -111,8 +111,13 @@ public class Player {
         }
     }
 
-    public Boolean checkForCharacter(char character) {
-        Boolean foundChar = false;
+    public boolean checkForCharacter(char character) {
+
+        boolean foundChar = false;
+        if (disabledRoundsLetter > 0 && character == Hangman.getForbiddenVowel()) // edited by dimi
+        {
+
+        } else {
         // Checks if the Character in word
         for (int i = 0; i < word.length(); i++) {
 
@@ -128,6 +133,11 @@ public class Player {
             //Adds the character to the list
             guessedWrong.add(character);
         }
+            if (disabledRoundsLetter > 0){
+                disabledRoundsLetter--;
+            }
+        }
+
         return foundChar;
     }
 
