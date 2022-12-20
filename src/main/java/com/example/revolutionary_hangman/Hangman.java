@@ -151,7 +151,7 @@ public class Hangman extends Application {
         char[] forbiddenVowels = {'a', 'e', 'i', 'o', 'u', 'y', 'å', 'ä', 'ö'};
         // Randomize which index of the character that will be forbidden.
         int forbiddenVowelIndex = random.nextInt(forbiddenVowels.length - 1);
-        System.out.println(forbiddenVowels[forbiddenVowelIndex]);
+        System.out.println("Banned vowel is: " + forbiddenVowels[forbiddenVowelIndex]);
         return forbiddenVowels[forbiddenVowelIndex];
     }
 
