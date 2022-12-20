@@ -57,8 +57,10 @@ public class Hangman extends Application {
     // Scene for playing
     private Scene playScene = new Scene(playersDrawing, WIDTH, HEIGHT);
 
-
-    private char forbiddenVowel;
+    public static char getForbiddenVowel() {
+        return forbiddenVowel;
+    }
+    private static char forbiddenVowel;
 
     @Override
     public void start(Stage startStage) throws IOException {
